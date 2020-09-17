@@ -10,7 +10,7 @@ from pythainlp.util import thai_strftime
 warnings.filterwarnings('ignore')
 
 
-sentence_1 = "อยากทำฟัน นัดได้วันไหนบ้างคะ"
+sentence_1 = "อยากขูดหินปูน นัดได้วันไหนบ้างคะ"
 print("sent_tokenize:", sent_tokenize(sentence_1))
 print("attacut:", word_tokenize(sentence_1, engine="attacut"))
 

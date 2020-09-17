@@ -9,12 +9,15 @@ from torch.utils.data import Dataset, DataLoader
 from nlp_utils import bag_of_words, tokenize
 #from model import NeuralNet
 
-with open('intents.json') as f:
+
+# โหลดไฟล์ intents.json
+with open('intents.json', encoding="utf8") as f:
     intents = json.load(f)
 
 all_words = []
 tags = []
 xy = []
+
 # loop through each sentence in our intents patterns
 for intent in intents['intents']:
     tag = intent['tag']
@@ -31,7 +34,7 @@ for intent in intents['intents']:
         # add to xy pair
         xy.append((w, tag))
 
-ignore_words = ['?', '!']
+ignore_words = ['?', '!', '(name)', '(', ')', ' ']
 all_words = [w for w in all_words if w not in ignore_words]
 
 #remove duplicates and sort
