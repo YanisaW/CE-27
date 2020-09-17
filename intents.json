@@ -205,11 +205,14 @@
     },
     {
       "tag": "cancel",
-      "patterns": ["Bye","See you later", "Goodbye"],
+      "patterns": [
+        "ยกเลิกการนัด",
+        "ยกเลิก",
+        "ขอยกเลิกนัด"
+      ],
       "responses": [
-        "See you later, thanks for visiting",
-        "Have a nice day",
-        "Bye! Come back again soon."
+        "ลูกค้าต้องการยกเลิกนัดทำ (รายการ) วันที่ (date) เวลา (time) ใช่ไหมคะ"
+
       ]
 
 
