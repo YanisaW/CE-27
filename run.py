@@ -1,15 +1,21 @@
 import torch
 import json
 from pythainlp import sent_tokenize, word_tokenize
-from torchtext import data
+import warnings
+import pythainlp
+from pythainlp.corpus import wordnet
+import datetime
+from pythainlp.util import thai_strftime
+#
+warnings.filterwarnings('ignore')
 
-print(torch.__version__)
-sentence_1 = "หีบมากมายหลายหีบยกหีบหนี หีบมากมีหนีหีบหนีบหนีหาย เห็นหนีหีบหนีบหนีกันมกกมาย เห็นหีบหายหลายหีบหนีบหนีเอย"
+
+sentence_1 = "อยากทำฟัน นัดได้วันไหนบ้างคะ"
 print("sent_tokenize:", sent_tokenize(sentence_1))
 print("attacut:", word_tokenize(sentence_1, engine="attacut"))
 
-with open('intents.json', 'r') as json_data:
-    intents = json.load(json_data)
+#with open('intents.json', 'r') as json_data:
+ #   intents = json.load(json_data)
 
-FILE = "data.pth"
-data = torch.load(FILE)
+#FILE = "data.pth"
+#data = torch.load(FILE)
