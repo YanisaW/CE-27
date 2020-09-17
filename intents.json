@@ -187,7 +187,35 @@
 
     },
     {
-      "tag": "goodbye",
+      "tag": "consult",
+      "patterns": [
+        "อยากปรึกษาหมอ",
+        "จัดฟันต้องทำยังไง",
+        "ปรึกษาหมอ",
+        "ปรึกษา"
+      ],
+      "responses": [
+        "นัดปรึกษาทันตแพทย์ก่อนนะคะ",
+        "ไม่ทราบว่าต้องการนัดพบทันตแพทย์เรื่อง (รายการ) ไหมคะ",
+        "นัดปรึกษาทันตแพทย์ก่อนนะคะ",
+        "นัดปรึกษาทันตแพทย์ก่อนนะคะ"
+      ]
+
+
+    },
+    {
+      "tag": "cancel",
+      "patterns": ["Bye","See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+
+
+    },
+    {
+      "tag": "postpone",
       "patterns": ["Bye","See you later", "Goodbye"],
       "responses": [
         "See you later, thanks for visiting",
