@@ -1,0 +1,52 @@
+{
+  "Dental_list": [
+    { "type": "Veneer",
+      "cost": 1650
+    },
+    { "type": "Teeth_Straighten",
+      "cost": 1650
+    },
+    { "type": "X-Ray",
+      "cost": 1650
+    },
+    { "type": "Crown",
+      "cost": 1650
+    },
+    { "type": "Teeth_Whitening",
+      "cost": 1650
+    },
+    { "type": "Airflow",
+      "cost": 1650
+    },
+    { "type": "Periodontic",
+      "cost": 1650
+    },
+    { "type": "Gum_Surgery",
+      "cost": 1650
+    },
+    { "type": "Laser_Gum",
+      "cost": 1650
+    },
+    { "type": "Dental_Implant",
+      "cost": 1650
+    },
+    { "type": "Root_Canal_treatment",
+      "cost": 1650
+    },
+    { "type": "Veneer",
+      "cost": 1650
+    },
+    { "type": "Tooth_Filling",
+      "cost": 1650
+    },
+    { "type": "Tooth_Extraction",
+      "cost": 1650
+    },
+    { "type": "Wisdom_Tooth",
+      "cost": 1650
+    },
+    { "type": "General_Treatment",
+      "cost": 1650
+    }
+  ]
+}
