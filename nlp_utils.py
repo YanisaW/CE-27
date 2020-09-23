@@ -4,7 +4,7 @@ from pythainlp.corpus import wordnet
 
 # ตัดคำโดยใช้ attacut
 def tokenize(sentence) :
-    return pythainlp.word_tokenize(sentence, engine='attacut')
+    return pythainlp.word_tokenize(sentence, engine='newmm')
 
 # สร้างคลังคำศัพท์
 def bag_of_words(tokenized_sentence, words) :

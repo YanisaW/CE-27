@@ -35,7 +35,7 @@ for intent in intents['intents']:
         # add to xy pair
         xy.append((w, tag))
 
-ignore_words = ['?', '!', '(name)', '(', ')', ' ']
+ignore_words = ['?', '!', '(name)', '(', ')', ' ','name', 'list', 'date', 'time']
 all_words = [w for w in all_words if w not in ignore_words]
 
 #remove duplicates and sort
