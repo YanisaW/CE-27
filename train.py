@@ -4,6 +4,7 @@ import json
 
 import torch
 import torch.nn as nn
+from setuptools.command.test import test
 from torch.utils.data import Dataset, DataLoader
 
 from nlp_utils import bag_of_words, tokenize
@@ -44,3 +45,13 @@ tags = sorted(set(tags))
 print(len(xy), "patterns")
 print(len(tags), "tags:", tags)
 print(len(all_words), "cleaned words:", all_words)
+
+#test change intent
+test = ''
+for p in intents['intents']:
+    if p['tag'] == 'cancel':
+        for q in p['responses']:
+            test = q
+print(test)
+test = test.replace('(list)', 'อุดฟัน').replace('(date)', '24 กย').replace('(time)', '15.00')
+print(test)
