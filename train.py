@@ -35,7 +35,7 @@ for intent in intents['intents']:
         # add to xy pair
         xy.append((w, tag))
 
-ignore_words = ['?', '!', '(name)', '(', ')', ' ']
+ignore_words = ['?', '!', 'name', '(', ')', ' ', 'date', 'list', 'time']
 all_words = [w for w in all_words if w not in ignore_words]
 
 #remove duplicates and sort
@@ -70,11 +70,12 @@ X_train = np.array(X_train)
 y_train = np.array(y_train)
 
 # Hyper-parameters
+num_epochs = 1000
 batch_size = 8
+learning_rate = 0.001
 input_size = len(X_train[0])
 hidden_size = 8
-output_size = len(tags)
-
+output_size = len(tags) # number of different class
 print(input_size, tags)
 
 class ChatDataset(Dataset):
@@ -98,4 +99,48 @@ train_loader = DataLoader(dataset=dataset,
                           shuffle=True,
                           num_workers=2)
 
-model = NeuralNet(input_size, hidden_size, output_size)
+# กรณีมี GPU ถ้าไม่มีให้ใช้ CPU แทน
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model = NeuralNet(input_size, hidden_size, output_size).to(device)
+
+# loss and optimizer
+criterion = nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+
+# actual training loop
+for epoch in range(num_epochs):
+    for (words, labels) in train_loader:
+        words = words.to(device)
+        labels = labels.to(device)
+
+        # forward
+        outputs = model(words)
+        # if y would be one-hot, we must apply
+        # labels = torch.max(labels, 1)[1]
+        loss = criterion(outputs, labels)
+
+        # Backward and optimize
+        optimizer.zero_grad() # empty the gradient first
+        loss.backward() # to calculate the back propagration
+        optimizer.step()
+
+    # print it
+    if (epoch + 1) % 100 == 0:
+        print(f'Epoch [{epoch + 1}/{num_epochs}], Loss: {loss.item():.4f}')
+
+# print final loss after the training loop
+print(f'final loss, Loss: {loss.item():.4f}')
+
+data = {
+    "model_state": model.state_dict(),
+    "input_size": input_size,
+    "hidden_size": hidden_size,
+    "output_size": output_size,
+    "all_words": all_words,
+    "tags": tags
+}
+
+FILE = "data.pth"
+torch.save(data, FILE)
+
+print(f'training complete. file saved to {FILE}')
