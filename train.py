@@ -8,7 +8,7 @@ from setuptools.command.test import test
 from torch.utils.data import Dataset, DataLoader
 
 from nlp_utils import bag_of_words, tokenize
-#from model import NeuralNet
+from model import NeuralNet
 
 
 # โหลดไฟล์ intents.json
@@ -35,7 +35,7 @@ for intent in intents['intents']:
         # add to xy pair
         xy.append((w, tag))
 
-ignore_words = ['?', '!', '(name)', '(', ')', ' ','name', 'list', 'date', 'time']
+ignore_words = ['?', '!', '(name)', '(', ')', ' ']
 all_words = [w for w in all_words if w not in ignore_words]
 
 #remove duplicates and sort
@@ -71,6 +71,11 @@ y_train = np.array(y_train)
 
 # Hyper-parameters
 batch_size = 8
+input_size = len(X_train[0])
+hidden_size = 8
+output_size = len(tags)
+
+print(input_size, tags)
 
 class ChatDataset(Dataset):
 
@@ -92,3 +97,5 @@ train_loader = DataLoader(dataset=dataset,
                           batch_size=batch_size,
                           shuffle=True,
                           num_workers=2)
+
+model = NeuralNet(input_size, hidden_size, output_size)
