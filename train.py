@@ -97,7 +97,7 @@ dataset = ChatDataset()
 train_loader = DataLoader(dataset=dataset,
                           batch_size=batch_size,
                           shuffle=True,
-                          num_workers=2)
+                          num_workers=0)
 
 # กรณีมี GPU ถ้าไม่มีให้ใช้ CPU แทน
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -111,7 +111,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 for epoch in range(num_epochs):
     for (words, labels) in train_loader:
         words = words.to(device)
-        labels = labels.to(device)
+        labels = labels.to(device=device, dtype=torch.int64)
 
         # forward
         outputs = model(words)
