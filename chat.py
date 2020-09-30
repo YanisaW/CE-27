@@ -6,7 +6,7 @@ from nlp_utils import bag_of_words, tokenize
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-with open('intents.json',  encoding="utf8") as json_data:
+with open('json/intents.json', encoding="utf8") as json_data:
     intents = json.load(json_data)
 
 FILE = "data.pth"

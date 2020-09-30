@@ -1,0 +1,64 @@
+{
+  "dental_lists": [
+    { "type": "Veneer",
+      "homonyms": ["วีเนียร์", "วีเนีย", "veneer", "วิเนียร์", "วิเนีย", "คอมโพสิทวิเนีย", "เซรามิกวีเนียร์"],
+      "cost": 1650
+    },
+    { "type": "Teeth_Straighten",
+      "homonyms": ["ดัดฟัน", "จัดฟัน", "ใส่เหล็กดัด", "เหล็กดัด"],
+      "cost": 1650
+    },
+    { "type": "X-Ray",
+      "homonyms": ["x-ray", "เอ็กซเรย์", "สแกนฟัน", "ฉายฟัน"],
+      "cost": 1650
+    },
+    { "type": "Crown",
+      "homonyms": ["ฟันปลอม"],
+      "cost": 1650
+    },
+    { "type": "Teeth_Whitening",
+      "homonyms": ["ฟอกฟัน", "ฟอกสีฟัน", "ฟันขาว"],
+      "cost": 1650
+    },
+    { "type": "Airflow",
+      "homonyms": ["ขูดหินปูนแอร์โฟลว์", "airflow", "แอร์โฟลว์", "แอร์โฟล", "แอร์โฟ"],
+      "cost": 1650
+    },
+    { "type": "Periodontic",
+      "homonyms": ["ปริทันต์", "โรคเหงือก"],
+      "cost": 1650
+    },
+    { "type": "Gum_Surgery",
+      "homonyms": ["ตกแต่งเหงือก", "ศัลยกรรมเหงือก", "ศัลย์เหงือก"],
+      "cost": 1650
+    },
+    { "type": "Laser_Gum",
+      "homonyms": ["เหงือกชมพู", "เลเซอร์เหงือก", "เลเซอเหงือก", "เลเสอเหงือก", "เลเสอร์เเหงือก", "เลเซอร์เหงือกชมพู", "เลเซอเหงือกชมพู", "เลเสอเหงือกชมพู", "เลเสอร์เเหงือกชมพู"],
+      "cost": 1650
+    },
+    { "type": "Dental_Implant",
+      "homonyms": ["รากฟันเทียม", "รากเทียม"],
+      "cost": 1650
+    },
+    { "type": "Root_Canal_treatment",
+      "homonyms": ["รักษารากฟัน"],
+      "cost": 1650
+    },
+    { "type": "Tooth_Filling",
+      "homonyms": ["อุดฟัน", "อุด"],
+      "cost": 1650
+    },
+    { "type": "Tooth_Extraction",
+      "homonyms": ["ถอนฟัน", "ถอน"],
+      "cost": 1650
+    },
+    { "type": "Wisdom_Tooth",
+      "homonyms": ["ฟันคุด", "คุด", "ผ่าฟันคุด"],
+      "cost": 1650
+    },
+    { "type": "General_Treatment",
+      "homonyms": ["ทั่วไป", "เช็คฟัน", "ธรรมดา"],
+      "cost": 1650
+    }
+  ]
+}

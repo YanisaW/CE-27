@@ -12,13 +12,26 @@ from model import NeuralNet
 
 
 # โหลดไฟล์ intents.json
-with open('intents.json', encoding="utf8") as f:
+with open('json/intents.json', encoding="utf8") as f:
     intents = json.load(f)
+
+# โหลดไฟล์ dental_list.json
+with open ('json/Dental_lists.json', encoding="utf8") as d:
+    dental_lists = json.load(d)
 
 all_words = []
 tags = []
 xy = []
+types = []
+homonyms = []
 
+for dental_list in dental_lists['dental_lists']:
+    type = dental_list['type']
+    types.append(type)
+    print("type: ", type, " || homonyms: ",dental_list['homonyms'])
+    for h in dental_list['homonyms']:
+        ht = tokenize(h)
+        homonyms.append((ht, type))
 # loop through each sentence in our intents patterns
 for intent in intents['intents']:
     tag = intent['tag']
@@ -58,13 +71,22 @@ print(len(all_words), "cleaned words:", all_words)
 
 X_train = []
 y_train = []
+z_train = []
+
+#for (homonym_sentence, type) in homonyms:
+    #bag_ = bag_of_words(homonyms, all_words)
+
 for (pattern_sentence, tag) in xy:
-    # X: bag of words (สร้างคลังคำศัพท์ คำไม่ซ้ำกันสร้าง ID)
-    bag = bag_of_words(pattern_sentence, all_words)
-    X_train.append(bag)
-    # y: ไม่ทำ one-hot(ทำข้อมูลเป็นคอลัมน์ย่อยๆ)
-    label = tags.index(tag) #[0,1,2,...]
-    y_train.append(label)
+    #for (homonym_sentence, type) in homonyms:
+        # X: bag of words (สร้างคลังคำศัพท์ คำไม่ซ้ำกันสร้าง ID)
+        bag = bag_of_words(pattern_sentence, all_words)
+        X_train.append(bag)
+        # y: ไม่ทำ one-hot(ทำข้อมูลเป็นคอลัมน์ย่อยๆ)
+        label = tags.index(tag) #[0,1,2,...]
+        y_train.append(label)
+
+        # z
+
 
 X_train = np.array(X_train)
 y_train = np.array(y_train)
