@@ -30,6 +30,7 @@ while True:
     # sentence = "do you use credit cards?"
     sentence = input("You: ")
     if sentence == "ออก":
+        print(f"{bot_name}: ขอบคุณที่ใช้บริการยิ้มสวยนะคะ")
         break
 
     sentence = tokenize(sentence)
