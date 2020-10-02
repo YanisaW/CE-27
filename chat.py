@@ -33,7 +33,7 @@ while True:
         print(f"{bot_name}: ขอบคุณที่ใช้บริการยิ้มสวยนะคะ")
         break
 
-    sentence = tokenize(sentence)
+    sentence = tokenize(sentence)สว
     X = bag_of_words(sentence, all_words)
     X = X.reshape(1, X.shape[0])
     X = torch.from_numpy(X).to(device)
@@ -48,6 +48,7 @@ while True:
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
+                print(tag)
                 print(f"{bot_name}: {random.choice(intent['responses'])}")
     else:
         print(f"{bot_name}: ยิ้มสวยไม่เข้าใจค่ะ ลองใหม่อีกครั้งค่ะ")
