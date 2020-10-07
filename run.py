@@ -33,7 +33,7 @@ for dental_list in dental_lists['dental_lists']:
 
         ht = tokenize(h)
         homonyms.append((ht, type))
-#print(homonyms)
+print(homonyms)
 
 # loop through each sentence in our intents patterns
 for intent in intents['intents']:
@@ -57,7 +57,7 @@ all_words = [w for w in all_words if w not in ignore_words]
 #remove duplicates and sort
 all_words = sorted(set(all_words))
 tags = sorted(set(tags))
-print(xy)
+#print(xy)
 #print(len(xy), "patterns")
 #print(len(tags), "tags:", tags)
 #print(len(all_words), "cleaned words:", all_words)

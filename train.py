@@ -32,6 +32,7 @@ for dental_list in dental_lists['dental_lists']:
     for h in dental_list['homonyms']:
         ht = tokenize(h)
         homonyms.append((ht, type))
+
 # loop through each sentence in our intents patterns
 for intent in intents['intents']:
     tag = intent['tag']

@@ -33,7 +33,7 @@ while True:
         print(f"{bot_name}: ขอบคุณที่ใช้บริการยิ้มสวยนะคะ")
         break
 
-    sentence = tokenize(sentence)สว
+    sentence = tokenize(sentence)
     X = bag_of_words(sentence, all_words)
     X = X.reshape(1, X.shape[0])
     X = torch.from_numpy(X).to(device)
