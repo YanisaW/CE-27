@@ -1,6 +1,7 @@
 import random
 import json
 import torch
+import datetime
 from model import NeuralNet
 from nlp_utils import bag_of_words, tokenize
 
@@ -8,6 +9,10 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 with open('json/intents.json', encoding="utf8") as json_data:
     intents = json.load(json_data)
+
+with open('json/Dental_lists.json', encoding="utf8") as json_data:
+    dental_lists = json.load(json_data)
+
 
 FILE = "data.pth"
 data = torch.load(FILE)
@@ -42,6 +47,10 @@ while True:
     _, predicted = torch.max(output, dim=1)
 
     tag = tags[predicted.item()]
+    for dental in dental_lists["dental_lists"]:
+        list1 = (dental["homonyms"])
+        price = (dental["cost"])
+    print(list1, price)
 
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
@@ -49,6 +58,18 @@ while True:
         for intent in intents['intents']:
             if tag == intent["tag"]:
                 print(tag)
-                print(f"{bot_name}: {random.choice(intent['responses'])}")
+                answer = random.choice(intent['responses'])
+                if '(name)' in answer:
+                    answer = answer.replace('(name)', 'สมหมาย')
+                if '(date)' in answer or '(time)' in answer:
+                    time = datetime.datetime.now()
+                    answer = answer.replace('(date)', time.strftime("%x")).replace('(time)', time.strftime("%X"))
+                # if '(list)' in answer or '(price)' in answer:
+                #         list1 = random.choice(dental_lists["type"])
+                #         price = random.choice(dental_lists["type"])
+                #         print(f"{list1} & {price}")
+                #         # answer = answer.replace('(list)', list1).replace('(price)', price)
+
+                print(f"{bot_name}: {answer}")
     else:
         print(f"{bot_name}: ยิ้มสวยไม่เข้าใจค่ะ ลองใหม่อีกครั้งค่ะ")
