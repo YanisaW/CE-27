@@ -47,10 +47,7 @@ while True:
     _, predicted = torch.max(output, dim=1)
 
     tag = tags[predicted.item()]
-    for dental in dental_lists["dental_lists"]:
-        list1 = (dental["homonyms"])
-        price = (dental["cost"])
-    print(list1, price)
+
 
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
@@ -61,14 +58,25 @@ while True:
                 answer = random.choice(intent['responses'])
                 if '(name)' in answer:
                     answer = answer.replace('(name)', 'สมหมาย')
+                if '(customer_name)' in answer:
+                    answer = answer.replace('(customer_name)', 'ลูกค้า')
                 if '(date)' in answer or '(time)' in answer:
                     time = datetime.datetime.now()
                     answer = answer.replace('(date)', time.strftime("%x")).replace('(time)', time.strftime("%X"))
-                # if '(list)' in answer or '(price)' in answer:
+                if '(list)' in answer or '(price)' in answer:
                 #         list1 = random.choice(dental_lists["type"])
                 #         price = random.choice(dental_lists["type"])
                 #         print(f"{list1} & {price}")
-                #         # answer = answer.replace('(list)', list1).replace('(price)', price)
+                    for dental in dental_lists["dental_lists"]:
+                        for a in dental["homonyms"]:
+                            if a in sentence:
+                                list1 = (dental["homonyms"][0])
+                                price = (dental["cost"])
+                                print(list1, price)
+                                answer = answer.replace('(list)', list1).replace('(price)', str(price))
+                                break
+
+
 
                 print(f"{bot_name}: {answer}")
     else:
