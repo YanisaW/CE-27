@@ -72,21 +72,20 @@ print(len(all_words), "cleaned words:", all_words)
 
 X_train = []
 y_train = []
-z_train = []
-
-#for (homonym_sentence, type) in homonyms:
-    #bag_ = bag_of_words(homonyms, all_words)
 
 for (pattern_sentence, tag) in xy:
-    #for (homonym_sentence, type) in homonyms:
         # X: bag of words (สร้างคลังคำศัพท์ คำไม่ซ้ำกันสร้าง ID)
         bag = bag_of_words(pattern_sentence, all_words)
         X_train.append(bag)
+
         # y: ไม่ทำ one-hot(ทำข้อมูลเป็นคอลัมน์ย่อยๆ)
         label = tags.index(tag) #[0,1,2,...]
         y_train.append(label)
 
-        # z
+        #for (homonym_sentence, type) in homonyms:
+            #for i in range(0, len(pattern_sentence)): # ลูป i
+                #if pattern_sentence[i] in homonym_sentence: #ดูว่ามีคำที่เหมือนใน homonym แค่ไหน แล้วจะเป็น type อะไร
+
 
 
 X_train = np.array(X_train)
@@ -160,7 +159,8 @@ data = {
     "hidden_size": hidden_size,
     "output_size": output_size,
     "all_words": all_words,
-    "tags": tags
+    "tags": tags,
+    "types": types
 }
 
 FILE = "data.pth"
