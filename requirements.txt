@@ -13,7 +13,6 @@ joblib==0.17.0
 MarkupSafe==1.1.1
 mkl-fft
 mkl-random
-mkl-service
 nltk==3.5
 numpy
 olefile==0.46
