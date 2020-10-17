@@ -15,7 +15,6 @@ MarkupSafe==1.1.1
 mkl-fft
 mkl-random
 nltk==3.5
-numpy
 olefile==0.46
 Pillow
 pythainlp==2.2.4
@@ -27,6 +26,7 @@ tinydb==4.2.0
 --find-links https://download.pytorch.org/whl/torch_stable.html
 torch==1.6.0+cpu
 torchvision==0.7.0+cpu
+numpy
 tqdm==4.50.0
 typing-extensions
 urllib3==1.25.10
