@@ -24,7 +24,7 @@ regex==2020.9.27
 requests==2.24.0
 six==1.15.0
 tinydb==4.2.0
-torch @ D:/Download/torch-1.6.0-cp36-cp36m-linux_x86_64.whl
+torch @ file:D:/Download/torch-1.6.0-cp36-cp36m-linux_x86_64.whl
 torchvision
 tqdm==4.50.0
 typing-extensions
