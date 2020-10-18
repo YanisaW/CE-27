@@ -1,7 +1,6 @@
 from flask import Flask, request, abort #abort ใช้รายงาน http
 import requests
-import Line
-from Line import Config
+from Line.configLine import *
 from chat import *
 app = Flask(__name__)
 
@@ -18,7 +17,7 @@ def webhook():
         message = payload['events'][0]['message']['text']
         print(message)
         answer = question(message)
-        ReplyMessage(Reply_token, answer, Line.Config.Channel_access_token)
+        ReplyMessage(Reply_token, answer, Line.configLine.Channel_access_token)
         return request.joson, 200 #success
     elif request.method == 'GET': # GET การดูหน้าเว็บ
         return 'This is method GET',200
