@@ -5,8 +5,8 @@ import datetime
 from model import NeuralNet
 from nlp_utils import bag_of_words, tokenize
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
+#device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cpu')
 with open('json/intents.json', encoding="utf8") as json_data:
     intents = json.load(json_data)
 
