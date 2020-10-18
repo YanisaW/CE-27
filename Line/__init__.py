@@ -1,8 +1,8 @@
 from flask import Flask, request, abort #abort ใช้รายงาน http
 import requests
 import json
-#from Line.Config import *
-from Line import Config
+# from Line.Config import *
+from Line import configLine
 from chat import *
 app = Flask(__name__)
 
