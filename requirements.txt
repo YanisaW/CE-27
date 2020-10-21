@@ -17,7 +17,7 @@ joblib==0.17.0
 MarkupSafe==1.1.1
 mkl-fft
 mkl-random
-mkl-service @ file:///C:/users/earn/anaconda3/envs/dentenv1/lib/site-packages
+mkl-service
 nltk==3.5
 numpy
 olefile==0.46
