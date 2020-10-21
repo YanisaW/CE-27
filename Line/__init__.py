@@ -3,7 +3,7 @@ import requests
 import json
 import Line
 from Line.configLine import *
-#from chat import *
+from chat import *
 app = Flask(__name__)
 
 @app.route('/')
@@ -18,8 +18,8 @@ def webhook():
         print(Reply_token)
         message = payload['events'][0]['message']['text']
         print(message)
-        answer = 'สวัสดีค่ะ'
-        #answer = question(message)
+        #answer = 'สวัสดีค่ะ'
+        answer = question(message)
         ReplyMessage(Reply_token, answer, Line.configLine.Channel_access_token)
         return request.joson, 200 #success
     elif request.method == 'GET': # GET การดูหน้าเว็บ
