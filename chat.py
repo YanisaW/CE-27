@@ -102,7 +102,7 @@ def question(sentence):
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
-                print(tag)
+                #print(tag)
                 answer = random.choice(intent['responses'])
                 if '(name)' in answer:
                     answer = answer.replace('(name)', 'สมหมาย')
