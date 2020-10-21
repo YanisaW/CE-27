@@ -21,7 +21,7 @@ def webhook():
         #answer = 'สวัสดีค่ะ'
         answer = question(message)
         ReplyMessage(Reply_token, answer, Line.configLine.Channel_access_token)
-        return request.joson, 200 #success
+        return request.json, 200 #success
     elif request.method == 'GET': # GET การดูหน้าเว็บ
         return 'This is method GET',200
     else:
