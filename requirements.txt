@@ -15,7 +15,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.2
 joblib==0.17.0
 MarkupSafe==1.1.1
-mkl-fft
+git+https://github.com/IntelPython/mkl_fft.git#egg=mkl_fft
 mkl-random
 mkl-service
 nltk==3.5
