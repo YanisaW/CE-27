@@ -8,18 +8,21 @@ filelock==3.0.12
 Flask==1.1.2
 future==0.18.2
 gunicorn==20.0.4
+icc-rt==2019.0
 idna==2.10
 importlib-metadata==2.0.0
 importlib-resources==3.0.0
+intel-numpy==1.15.1
+intel-openmp==2019.0
 itsdangerous==1.1.0
 Jinja2==2.11.2
 joblib==0.17.0
 MarkupSafe==1.1.1
-git+https://github.com/IntelPython/mkl_fft.git#egg=mkl_fft
-mkl-random
-mkl-service
+mkl==2019.0
+mkl-fft==1.0.6
+mkl-random==1.0.1.1
 nltk==3.5
-numpy
+numpy==1.15.1
 olefile==0.46
 Pillow
 pythainlp==2.2.4
@@ -27,6 +30,8 @@ python-crfsuite==0.9.7
 regex==2020.9.27
 requests==2.24.0
 six==1.15.0
+tbb==2019.0
+tbb4py==2019.0
 tinydb==4.2.0
 --find-links https://download.pytorch.org/whl/torch_stable.html
 torch==1.6.0+cpu
