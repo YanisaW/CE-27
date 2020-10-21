@@ -1,5 +1,6 @@
 from flask import Flask, request, abort #abort ใช้รายงาน http
 import requests
+import json
 import Line
 from Line.configLine import *
 #from chat import *
