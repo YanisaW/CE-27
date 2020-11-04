@@ -3,7 +3,7 @@ import pythainlp
 
 from pythainlp.corpus import wordnet
 
-# ตัดคำโดยใช้ attacut
+# ตัดคำโดยใช้ newmm
 def tokenize(sentence) :
     return pythainlp.word_tokenize(sentence, engine='newmm')
 
