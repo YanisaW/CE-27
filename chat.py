@@ -75,8 +75,8 @@ model.eval()
 #                                 print(list1, price)
 #                                 answer = answer.replace('(list)', list1).replace('(price)', str(price))
 #                                 break
-#                             else:
-#                                 answer = 'ราคา'
+#                     if '(list)' in answer or '(price)' in answer:
+#                         answer = 'ราคา'
 #
 #
 #
@@ -121,8 +121,9 @@ def question(sentence):
                                 print(list1, price)
                                 answer = answer.replace('(list)', list1).replace('(price)', str(price))
                                 break
-                            else:
-                                answer = 'ราคา'
+                    if '(list)' in answer or '(price)' in answer:
+                        answer = 'ราคา'
+
                 return answer
     else:
         return ("ยิ้มสวยไม่เข้าใจค่ะ ลองถามใหม่อีกครั้งค่ะ")
