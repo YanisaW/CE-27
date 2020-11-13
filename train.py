@@ -10,13 +10,16 @@ from torch.utils.data import Dataset, DataLoader
 from nlp_utils import bag_of_words, tokenize
 from model import NeuralNet
 
+#Analyze Accuracy
+# from torch.utils.tensorboard import SummaryWriter
+
 
 # โหลดไฟล์ intents.json
 with open('json/intents.json', encoding="utf8") as f:
     intents = json.load(f)
 
 # โหลดไฟล์ dental_list.json
-with open ('json/Dental_lists.json', encoding="utf8") as d:
+with open('json/Dental_lists.json', encoding="utf8") as d:
     dental_lists = json.load(d)
 
 all_words = []
@@ -128,7 +131,9 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 # loss and optimizer
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+#writer = SummaryWriter(f'runs/MNIST/tryingout_tensorboard')
 
+step = 0
 # actual training loop
 for epoch in range(num_epochs):
     for (words, labels) in train_loader:
@@ -146,9 +151,21 @@ for epoch in range(num_epochs):
         loss.backward() # to calculate the back propagration
         optimizer.step()
 
+        #calculate running accuracy
+        # _, predictions = outputs.max(1)
+        # num_correct = (predictions == labels).sum()
+        # running_train_acc = float(num_correct)/float(words.shape[0])
+        #
+        # writer.add_scalar('Training loss', loss, global_step=step)
+        # writer.add_scalar('Training Accuracy',running_train_acc, global_step=step)
+        # step+=1
+
     # print it
     if (epoch + 1) % 100 == 0:
         print(f'Epoch [{epoch + 1}/{num_epochs}], Loss: {loss.item():.4f}')
+
+
+
 
 # print final loss after the training loop
 print(f'final loss, Loss: {loss.item():.4f}')
