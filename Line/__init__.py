@@ -37,13 +37,24 @@ def ReplyMessage(Reply_token, TextMessage, Line_Acees_Token):
         'Authorization':Authorization
     }
 
-    data = {
-        "replyToken":Reply_token,
-        "messages":[{
-            "type":"text",
-            "text":TextMessage
-        }]
-    }
+    if TextMessage == 'ราคา':
+        data = {
+            "replyToken":Reply_token,
+            "messages":[{
+                "type":"text",
+                "text":TextMessage
+            }]
+        }
+    else:
+        data = {
+            "replyToken": Reply_token,
+            "messages": [{
+                "type": "image",
+                "originalContentUrl": "https://lh3.googleusercontent.com/proxy/BuPNo1xpalsU3Dia9QZWHYBSeAciffsnQa4MaQ07qKlQnlg-0-P7AVWO5EHaoIHOl8vzTPnD9FT-yay6HIoxbmcTk0YDgg",
+                "previewImageUrl": "https://lh3.googleusercontent.com/proxy/BuPNo1xpalsU3Dia9QZWHYBSeAciffsnQa4MaQ07qKlQnlg-0-P7AVWO5EHaoIHOl8vzTPnD9FT-yay6HIoxbmcTk0YDgg"
+            }]
+        }
+
 
     data = json.dumps(data) ## dump dict >> Json Object
     r = requests.post(LINE_API, headers=headers, data=data)
