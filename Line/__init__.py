@@ -42,8 +42,8 @@ def ReplyMessage(Reply_token, TextMessage, Line_Acees_Token):
             "replyToken": Reply_token,
             "messages": [{
                 "type": "image",
-                "originalContentUrl": "https://i.ibb.co/WDBqmHC/price-big.png",
-                "previewImageUrl": "https://i.ibb.co/h9XrYxq/price-small.png"
+                "originalContentUrl": "https://i.ibb.co/7zMvYQw/price-bigl.jpg",
+                "previewImageUrl": "https://i.ibb.co/7zMvYQw/price-bigl.jpg"
             }]
         }
 
