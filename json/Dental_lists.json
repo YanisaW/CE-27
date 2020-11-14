@@ -61,11 +61,19 @@
       "cost": 700
     },
     { "type": "Wisdom_Tooth",
-      "homonyms": ["ฟันคุด", "คุด", "ผ่าฟันคุด"],
+      "homonyms": ["ผ่าฟันคุด","ฟันคุด", "คุด"],
       "cost": 2500
     },
     { "type": "General_Treatment",
       "homonyms": ["ทั่วไป", "เช็คฟัน", "ธรรมดา","เช็ค"],
+      "cost": 500
+    },
+    { "type": "General_Treatment",
+      "homonyms": ["ทั่วไป", "เช็คฟัน", "ธรรมดา","เช็ค"],
+      "cost": 500
+    },
+    { "type": "Tartar",
+      "homonyms": ["ขูดหินปูน", "หินปูน", "ธรรมดา","ปูน"],
       "cost": 500
     }
   ]

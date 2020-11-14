@@ -42,8 +42,8 @@ def ReplyMessage(Reply_token, TextMessage, Line_Acees_Token):
             "replyToken": Reply_token,
             "messages": [{
                 "type": "image",
-                "originalContentUrl": "https://lh3.googleusercontent.com/proxy/BuPNo1xpalsU3Dia9QZWHYBSeAciffsnQa4MaQ07qKlQnlg-0-P7AVWO5EHaoIHOl8vzTPnD9FT-yay6HIoxbmcTk0YDgg",
-                "previewImageUrl": "https://lh3.googleusercontent.com/proxy/BuPNo1xpalsU3Dia9QZWHYBSeAciffsnQa4MaQ07qKlQnlg-0-P7AVWO5EHaoIHOl8vzTPnD9FT-yay6HIoxbmcTk0YDgg"
+                "originalContentUrl": "https://ibb.co/cb2M4yq",
+                "previewImageUrl": "https://ibb.co/wgJ8cZv"
             }]
         }
 
