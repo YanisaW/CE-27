@@ -125,7 +125,8 @@ train_loader = DataLoader(dataset=dataset,
                           num_workers=0)
 
 # กรณีมี GPU ถ้าไม่มีให้ใช้ CPU แทน
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+#device =torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cpu')
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
 
 # loss and optimizer
