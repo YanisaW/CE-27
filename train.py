@@ -52,7 +52,7 @@ for intent in intents['intents']:
         # add to xy pair
         xy.append((w, tag))
 
-ignore_words = ['?', '!', 'name', '(', ')', ' ', 'date', 'list', 'time']
+ignore_words = ['?', '!', 'n','a','m','e', '(', ')', ' ', 'd','t', 'l','i','s','t']
 all_words = [w for w in all_words if w not in ignore_words]
 
 #remove duplicates and sort
@@ -95,11 +95,11 @@ X_train = np.array(X_train)
 y_train = np.array(y_train)
 
 # Hyper-parameters
-num_epochs = 1000
-batch_size = 8
+num_epochs = 1500
+batch_size = 32
 learning_rate = 0.001
 input_size = len(X_train[0])
-hidden_size = 8
+hidden_size = 32
 output_size = len(tags) # number of different class
 print(input_size, tags)
 
