@@ -1,7 +1,6 @@
 import numpy as np
 import pythainlp
 
-from pythainlp.corpus import wordnet
 
 # ตัดคำโดยใช้ newmm
 def tokenize(sentence) :
