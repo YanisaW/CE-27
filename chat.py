@@ -39,6 +39,8 @@ while True:
         break
 
     sentence = tokenize(sentence)
+    ignore_words = ['?', '!', '.','"','@','#','^','=','-',',','/','*','$','&','(',')',' ']
+    sentence = [w for w in sentence if w not in ignore_words]
     X = bag_of_words(sentence, all_words)
     X = X.reshape(1, X.shape[0])
     X = torch.from_numpy(X).to(device)
