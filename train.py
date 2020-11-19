@@ -28,13 +28,13 @@ xy = []
 types = []
 homonyms = []
 
-for dental_list in dental_lists['dental_lists']:
-    type = dental_list['type']
-    types.append(type)
-    print("type: ", type, " || homonyms: ",dental_list['homonyms'])
-    for h in dental_list['homonyms']:
-        ht = tokenize(h)
-        homonyms.append((ht, type))
+# for dental_list in dental_lists['dental_lists']:
+#     type = dental_list['type']
+#     types.append(type)
+#     print("type: ", type, " || homonyms: ",dental_list['homonyms'])
+#     for h in dental_list['homonyms']:
+#         ht = tokenize(h)
+#         homonyms.append((ht, type))
 
 # loop through each sentence in our intents patterns
 for intent in intents['intents']:
@@ -134,7 +134,7 @@ criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 #writer = SummaryWriter(f'runs/MNIST/tryingout_tensorboard')
 
-step = 0
+# step = 0
 # actual training loop
 for epoch in range(num_epochs):
     for (words, labels) in train_loader:
