@@ -67,7 +67,6 @@ custom_words_list.update(words)
 trie = dict_trie(dict_source=custom_words_list)
 custom_tokenizer = Tokenizer(custom_dict=trie, engine='newmm')
 
-#print("custom :", custom_tokenizer.word_tokenize(text))
 
 # loop through each sentence in our intents patterns
 for intent in intents['intents']:
@@ -83,9 +82,9 @@ for intent in intents['intents']:
         # add to our words list
         all_words.extend(w)
 
-
         # add to xy pair
         xy.append((w, tag))
+
 
 ignore_words = ['?', '!', 'n','a','m','e', '(', ')', ' ', 'd','t', 'l','i','s','t']
 all_words = [w for w in all_words if w not in ignore_words]
