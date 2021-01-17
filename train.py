@@ -10,6 +10,10 @@ from torch.utils.data import Dataset, DataLoader
 from nlp_utils import bag_of_words, tokenize
 from model import NeuralNet
 
+from pythainlp import word_tokenize, Tokenizer
+from pythainlp.util import dict_trie
+from pythainlp.corpus.common import thai_words
+
 #Analyze Accuracy
 # from torch.utils.tensorboard import SummaryWriter
 
@@ -36,6 +40,35 @@ homonyms = []
 #         ht = tokenize(h)
 #         homonyms.append((ht, type))
 
+# Add word to Dictionary
+words = [
+ "สวีดัด", "หวัดดี",
+ "วีเนียร์", "วีเนีย", "วิเนียร์", "วิเนีย",
+ "จัดฟัน", "ดัดฟัน", "เหล็กดัด",
+ "เอกซเรย์", "เอ็กซเรย์", "สแกน","แสกน",
+ "พิมพ์ปาก", "พิมพ์ฟัน",
+ "รีเทนเนอร์", "รีเทนเนอ",
+ "ฟอกฟัน", "ฟอกสีฟัน",
+ "ขูดหินปูน", "แอร์โฟลว์", "แอร์โฟล", "แอร์โฟ", "แอร์โฟร์",
+ "โรคเหงือก",
+ "เลเซอร์เหงือก", "เลเซอร์", "เลเซอเหงือก", "เลเสอเหงือก", "เลเสอร์เเหงือก", "เลเซอร์เหงือกชมพู", "เลเซอเหงือกชมพู", "เลเสอเหงือกชมพูู", "เลเสอร์เเหงือกชมพู",
+ "ศัลยกรรมเหงือก", "ตกแต่งเหงือก", "ศัลย์เหงือก", "ผ่าเหงือก", "ตัดเหงือก", "ตกแต่ง", "ศัลยกรรม",
+ "รักษารากฟัน",
+ "อุดฟัน",
+ "ถอนฟัน",
+ "ผ่าฟันคุด", "ฟันคุด", "ถอนฟันคุด"
+]
+custom_words_list = set(thai_words())
+## add multiple words
+custom_words_list.update(words)
+## add word
+# custom_words_list.add('เป็งปุ๊ด')
+# custom_words_list.add('เพ็ญพุธ')
+trie = dict_trie(dict_source=custom_words_list)
+custom_tokenizer = Tokenizer(custom_dict=trie, engine='newmm')
+
+#print("custom :", custom_tokenizer.word_tokenize(text))
+
 # loop through each sentence in our intents patterns
 for intent in intents['intents']:
     tag = intent['tag']
@@ -44,10 +77,12 @@ for intent in intents['intents']:
     tags.append(tag)
     for pattern in intent['patterns']:
         # tokenize each word in the sentence
-        w = tokenize(pattern)
+        # w = tokenize(pattern)
+        w = custom_tokenizer.word_tokenize(pattern)
 
         # add to our words list
         all_words.extend(w)
+
 
         # add to xy pair
         xy.append((w, tag))
@@ -62,6 +97,7 @@ tags = sorted(set(tags))
 print(len(xy), "patterns")
 print(len(tags), "tags:", tags)
 print(len(all_words), "cleaned words:", all_words)
+
 
 #test change intent with variable
 # test = ''
