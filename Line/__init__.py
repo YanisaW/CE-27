@@ -21,7 +21,8 @@ def webhook():
         userID = payload['events'][0]['source']['userId']
         print(userID)
         #answer = 'สวัสดีค่ะ'
-        answer = question(message+' ID :'+userID)
+        answer1 = question(message)
+        answer = message+' ID :'+userID
         ReplyMessage(Reply_token, answer, Line.configLine.Channel_access_token)
         return request.json, 200 #success
     elif request.method == 'GET': # GET การดูหน้าเว็บ
