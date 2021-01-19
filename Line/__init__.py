@@ -78,12 +78,11 @@ def PushMessage(id, TextMessage, Line_Acees_Token):
         'Authorization': Authorization
     }
 
-    if TextMessage == 'ราคา':
-        data = {
-            "to": id,
-            "messages": [{
-                "type": "text",
-                "text": TextMessage
+    data = {
+        "to": id,
+        "messages": [{
+            "type": "text",
+            "text": TextMessage
             }]
         }
 
