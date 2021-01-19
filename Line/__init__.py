@@ -20,6 +20,8 @@ def webhook():
         print(message)
         userID = payload['events'][0]['source']['userId']
         print(userID)
+        groupID = payload['events'][0]['source']['groupId']
+        print(groupID)
         #answer = 'สวัสดีค่ะ'
         answer = question(message)
         #answer = answer1 +' ID :'+userID
