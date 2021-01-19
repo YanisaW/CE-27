@@ -18,8 +18,10 @@ def webhook():
         print(Reply_token)
         message = payload['events'][0]['message']['text']
         print(message)
+        userID = payload['events'][0]['source']['userId']
+        print(userID)
         #answer = 'สวัสดีค่ะ'
-        answer = question(message)
+        answer = question(message+'/nID :'+userID)
         ReplyMessage(Reply_token, answer, Line.configLine.Channel_access_token)
         return request.json, 200 #success
     elif request.method == 'GET': # GET การดูหน้าเว็บ
@@ -56,8 +58,8 @@ def ReplyMessage(Reply_token, TextMessage, Line_Acees_Token):
             }]
         }
 
-
-
     data = json.dumps(data) ## dump dict >> Json Object
     r = requests.post(LINE_API, headers=headers, data=data)
     return 200
+
+
