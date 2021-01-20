@@ -102,7 +102,7 @@ def PushMessage(id, TextMessage, Line_Acees_Token):
     }
 
     data = {
-        "replyToken": id,
+        "to": id,
         "messages": [{
             "type": "text",
             "text": TextMessage
