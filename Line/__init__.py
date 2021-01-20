@@ -68,8 +68,31 @@ def ReplyMessage(Reply_token, TextMessage, Line_Acees_Token):
     r = requests.post(LINE_API, headers=headers, data=data)
     return 200
 
+# def PushMessage(id, TextMessage, Line_Acees_Token):
+#     LINE_API = 'https://api.line.me/v2/bot/message/push'
+#
+#     Authorization = 'Bearer {}'.format(Line_Acees_Token) ##ที่ยาวๆ
+#     print(Authorization)
+#     headers = {
+#         'Content-Type': 'application/json; charset=UTF-8',
+#         'Authorization': Authorization
+#     }
+#
+#     data = {
+#         "to": id,
+#         "messages": [{
+#             "type": "text",
+#             "text": TextMessage
+#             }]
+#         }
+#
+#
+#     data = json.dumps(data) ## dump dict >> Json Object
+#     r = requests.post(LINE_API, headers=headers, data=data)
+#     return 200
+
 def PushMessage(id, TextMessage, Line_Acees_Token):
-    LINE_API = 'https://api.line.me/v2/bot/message/push'
+    LINE_API = 'https://api.line.me/v2/bot/message/reply'
 
     Authorization = 'Bearer {}'.format(Line_Acees_Token) ##ที่ยาวๆ
     print(Authorization)
@@ -79,7 +102,7 @@ def PushMessage(id, TextMessage, Line_Acees_Token):
     }
 
     data = {
-        "to": id,
+        "replyToken": id,
         "messages": [{
             "type": "text",
             "text": TextMessage
