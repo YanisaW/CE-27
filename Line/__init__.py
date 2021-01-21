@@ -123,7 +123,6 @@ def contactAdmin(Reply_token, Line_Acees_Token):
                         "offsetTop": "none",
                         "offsetEnd": "none",
                         "offsetBottom": "none",
-                        "animated": "false",
                         "offsetStart": "none"
                     },
                     "body": {
@@ -151,7 +150,6 @@ def contactAdmin(Reply_token, Line_Acees_Token):
                             {
                                 "type": "text",
                                 "text": "สามารถติดต่อสอบถามแอดมินได้ค่ะ",
-                                "wrap": "true",
                                 "color": "#636463",
                                 "size": "md"
                             }
