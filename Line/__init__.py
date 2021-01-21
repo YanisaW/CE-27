@@ -105,26 +105,79 @@ def contactAdmin(Reply_token, Line_Acees_Token):
     data = {
             "replyToken":Reply_token,
             "messages":[
+                # {
+                #     "type": "bubble",
+                #     "hero": {
+                #         "type": "image",
+                #         "url": "https://i.ibb.co/PxRtXZc/image.png",
+                #         "size": "full",
+                #         "aspectRatio": "2:1",
+                #         "aspectMode": "cover",
+                #         "action": {
+                #             "type": "uri",
+                #             "uri": "https://linecorp.com"
+                #         },
+                #         "margin": "none",
+                #         "align": "end",
+                #         "gravity": "center",
+                #         "offsetTop": "none",
+                #         "offsetEnd": "none",
+                #         "offsetBottom": "none",
+                #         "offsetStart": "none"
+                #     },
+                #     "body": {
+                #         "type": "box",
+                #         "layout": "vertical",
+                #         "spacing": "md",
+                #         "action": {
+                #             "type": "uri",
+                #             "uri": "https://linecorp.com"
+                #         },
+                #         "contents": [
+                #             {
+                #                 "type": "text",
+                #                 "text": "ยิ้มสวยไม่เข้าใจค่ะ ",
+                #                 "size": "lg",
+                #                 "weight": "bold",
+                #                 "color": "#232323"
+                #             },
+                #             {
+                #                 "type": "box",
+                #                 "layout": "vertical",
+                #                 "spacing": "sm",
+                #                 "contents": []
+                #             },
+                #             {
+                #                 "type": "text",
+                #                 "text": "สามารถติดต่อสอบถามแอดมินได้ค่ะ",
+                #                 "color": "#636463",
+                #                 "size": "md"
+                #             }
+                #         ]
+                #     },
+                #     "footer": {
+                #         "type": "box",
+                #         "layout": "vertical",
+                #         "contents": [
+                #             {
+                #                 "type": "spacer",
+                #                 "size": "xxl"
+                #             },
+                #             {
+                #                 "type": "button",
+                #                 "style": "primary",
+                #                 "color": "#00ac00",
+                #                 "action": {
+                #                     "type": "uri",
+                #                     "label": "ติดต่อแอดมิน",
+                #                     "uri": "https://lin.ee/4AhDoDQ"
+                #                 }
+                #             }
+                #         ]
+                #     }
+                # }
                 {
                     "type": "bubble",
-                    "hero": {
-                        "type": "image",
-                        "url": "https://i.ibb.co/PxRtXZc/image.png",
-                        "size": "full",
-                        "aspectRatio": "2:1",
-                        "aspectMode": "cover",
-                        "action": {
-                            "type": "uri",
-                            "uri": "https://linecorp.com"
-                        },
-                        "margin": "none",
-                        "align": "end",
-                        "gravity": "center",
-                        "offsetTop": "none",
-                        "offsetEnd": "none",
-                        "offsetBottom": "none",
-                        "offsetStart": "none"
-                    },
                     "body": {
                         "type": "box",
                         "layout": "vertical",
