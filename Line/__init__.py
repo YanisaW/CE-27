@@ -190,3 +190,47 @@ def contactAdmin(Reply_token, Line_Acees_Token):
     data = json.dumps(data)  ## dump dict >> Json Object
     r = requests.post(LINE_API, headers=headers, data=data)
     return 200
+
+# #flex msg จองนัด
+# {
+#   "type": "bubble",
+#   "body": {
+#     "type": "box",
+#     "layout": "vertical",
+#     "spacing": "md",
+#     "action": {
+#       "type": "uri",
+#       "uri": "https://linecorp.com"
+#     },
+#     "contents": [
+#       {
+#         "type": "text",
+#         "text": "คุณลูกค้าสามารถจองนัดทำฟันได้ค่ะ",
+#         "size": "md",
+#         "weight": "bold",
+#         "color": "#232323",
+#         "align": "center"
+#       }
+#     ]
+#   },
+#   "footer": {
+#     "type": "box",
+#     "layout": "vertical",
+#     "contents": [
+#       {
+#         "type": "spacer",
+#         "size": "xxl"
+#       },
+#       {
+#         "type": "button",
+#         "style": "primary",
+#         "color": "#00ac00",
+#         "action": {
+#           "type": "uri",
+#           "label": "คลิกเพื่อจองนัด",
+#           "uri": "https://forms.gle/bk1x4c764HDPdFRM8"
+#         }
+#       }
+#     ]
+#   }
+# }
