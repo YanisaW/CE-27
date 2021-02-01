@@ -28,6 +28,8 @@ def webhook():
         if answer == "ยิ้มสวยไม่เข้าใจค่ะ ลองถามใหม่อีกครั้งค่ะ":
             #PushMessage(Line.configLine.groupID, message, Line.configLine.Channel_access_token)
             contactAdmin(Reply_token, Line.configLine.Channel_access_token)
+        elif answer == "แผนที่":
+            location(Reply_token, Line.configLine.Channel_access_token)
         else:
             ReplyMessage(Reply_token, answer, Line.configLine.Channel_access_token)
         return request.json, 200 #success
@@ -199,23 +201,24 @@ def location(Reply_token, Line_Acees_Token):
     print(Authorization)
     headers = {
         'Content-Type': 'application/json; charset=UTF-8',
-        'Authorization':Authorization
+        'Authorization': Authorization
     }
 
     data = {
-            "replyToken":Reply_token,
-            "messages":[{
+            "replyToken": Reply_token,
+            "messages": [{
                 "type": "location",
                   "title": "คลินิกยิ้มสวย",
                   "address": "แขวง ลำปลาทิว เขตลาดกระบัง กรุงเทพมหานคร 10520",
-                  "latitude": 13.7442,
-                  "longitude": 100.540779
+                  "latitude": 13.729358702442287,
+                  "longitude": 100.77553721017871
             }]
         }
 
     data = json.dumps(data) ## dump dict >> Json Object
     r = requests.post(LINE_API, headers=headers, data=data)
     return 200
+
 # #flex msg จองนัด
 # {
 #   "type": "bubble",
