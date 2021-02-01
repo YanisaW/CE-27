@@ -191,6 +191,31 @@ def contactAdmin(Reply_token, Line_Acees_Token):
     r = requests.post(LINE_API, headers=headers, data=data)
     return 200
 
+
+def location(Reply_token, Line_Acees_Token):
+    LINE_API = 'https://api.line.me/v2/bot/message/reply'
+
+    Authorization = 'Bearer {}'.format(Line_Acees_Token) ##ที่ยาวๆ
+    print(Authorization)
+    headers = {
+        'Content-Type': 'application/json; charset=UTF-8',
+        'Authorization':Authorization
+    }
+
+    data = {
+            "replyToken":Reply_token,
+            "messages":[{
+                "type": "location",
+                  "title": "คลินิกยิ้มสวย",
+                  "address": "แขวง ลำปลาทิว เขตลาดกระบัง กรุงเทพมหานคร 10520",
+                  "latitude": 13.7442,
+                  "longitude": 100.540779
+            }]
+        }
+
+    data = json.dumps(data) ## dump dict >> Json Object
+    r = requests.post(LINE_API, headers=headers, data=data)
+    return 200
 # #flex msg จองนัด
 # {
 #   "type": "bubble",
