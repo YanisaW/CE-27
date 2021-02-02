@@ -13,6 +13,8 @@ with open('json/intents.json', encoding="utf8") as json_data:
 with open('json/Dental_lists.json', encoding="utf8") as json_data:
     dental_lists = json.load(json_data)
 
+with open('json/Dentist.json', encoding="utf8") as json_data:
+    dentist = json.load(json_data)
 
 FILE = "data.pth"
 data = torch.load(FILE)
@@ -57,10 +59,15 @@ model.eval()
 #         print(prob.item())
 #         for intent in intents['intents']:
 #             if tag == intent["tag"]:
-#                 print(tag)
+#                 # print(tag)
 #                 answer = random.choice(intent['responses'])
 #                 if '(name)' in answer:
-#                     answer = answer.replace('(name)', 'สมหมาย')
+#                     name = ""
+#                     for dent in dentist['Dentist']:
+#                         for dayWeek in dent['OnDuty']:
+#                             if dayWeek == time.strftime("%a"): #วันตรงกัน
+#                                 name = name + "คุณหมอ" + dent['Name'] + " "
+#                     answer = answer.replace('(name)', name)
 #                 if '(customer_name)' in answer:
 #                     answer = answer.replace('(customer_name)', 'ลูกค้า')
 #                 if '(date)' in answer or '(time)' in answer:
@@ -84,6 +91,7 @@ model.eval()
 #
 #
 #                 print(f"{bot_name}: {answer}")
+#
 #     else:
 #         print(f"{bot_name}: ยิ้มสวยไม่เข้าใจค่ะ ลองใหม่อีกครั้งค่ะ")
 
@@ -102,14 +110,19 @@ def question(sentence):
 
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
-    if prob.item() > 0.85:
+    if prob.item() > 0.9:
         print(prob.item())
         for intent in intents['intents']:
             if tag == intent["tag"]:
-                #print(tag)
+                # print(tag)
                 answer = random.choice(intent['responses'])
                 if '(name)' in answer:
-                    answer = answer.replace('(name)', 'สมหมาย')
+                    name = ""
+                    for dent in dentist['Dentist']:
+                        for dayWeek in dent['OnDuty']:
+                            if dayWeek == time.strftime("%a"): #วันตรงกัน
+                                name = name + "คุณหมอ" + dent['Name'] + " "
+                    answer = answer.replace('(name)', name)
                 if '(customer_name)' in answer:
                     answer = answer.replace('(customer_name)', 'ลูกค้า')
                 if '(date)' in answer or '(time)' in answer:

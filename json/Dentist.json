@@ -1,0 +1,39 @@
+{
+  "Dentist": [
+    {
+      "Name": "จิตดี",
+      "Surname":  "สราญรมย์",
+      "Nickname": "หมอบี",
+      "Expert": ["จัดฟัน"],
+      "OnDuty": ["Mon","Thu","Sun"]
+    },
+    {
+      "Name": "อันนา",
+      "Surname":  "เจริญธรรม",
+      "Nickname": "หมอแอน",
+      "Expert": ["ศัลยกรรมตกแต่งเหงือก"],
+      "OnDuty": ["Mon","Tue"]
+    },
+    {
+      "Name": "สมหญิง",
+      "Surname":  "ใจงาม",
+      "Nickname": "หมอหญิง",
+      "Expert": ["รากฟัน", "จัดฟัน"],
+      "OnDuty": ["Tue","Wed","Fri"]
+    },
+    {
+      "Name": "ภูริญ",
+      "Surname":  "คมขำ",
+      "Nickname": "หมอปลา",
+      "Expert": ["รากฟัน", "ฟันเทียม"],
+      "OnDuty": ["Wed","Thu"]
+    },
+    {
+      "Name": "เกรียงไกร",
+      "Surname":  "วงศ์ตระกูล",
+      "Nickname": "หมอนนท์",
+      "Expert": ["จัดฟัน","วีเนียร์"],
+      "OnDuty": ["Fri","Sat","Sun"]
+    }
+  ]
+}
