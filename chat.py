@@ -102,7 +102,7 @@ def question(sentence):
 
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
-    if prob.item() > 0.75:
+    if prob.item() > 0.85:
         print(prob.item())
         for intent in intents['intents']:
             if tag == intent["tag"]:
