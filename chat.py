@@ -65,7 +65,7 @@ model.eval()
 #                     name = ""
 #                     for dent in dentist['Dentist']:
 #                         for dayWeek in dent['OnDuty']:
-#                             if dayWeek == time.strftime("%a"): #วันตรงกัน
+#                             if dayWeek == datetime.datetime.now().strftime("%a"): #วันตรงกัน
 #                                 name = name + "คุณหมอ" + dent['Name'] + " "
 #                     answer = answer.replace('(name)', name)
 #                 if '(customer_name)' in answer:
@@ -120,7 +120,7 @@ def question(sentence):
                     name = ""
                     for dent in dentist['Dentist']:
                         for dayWeek in dent['OnDuty']:
-                            if dayWeek == time.strftime("%a"): #วันตรงกัน
+                            if dayWeek == datetime.datetime.now().strftime("%a"): #วันตรงกัน
                                 name = name + "คุณหมอ" + dent['Name'] + " "
                     answer = answer.replace('(name)', name)
                 if '(customer_name)' in answer:
