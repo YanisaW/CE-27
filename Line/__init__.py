@@ -235,62 +235,68 @@ def contractAdmin(Reply_token, Line_Acees_Token):
     data = {
         "replyToken": Reply_token,
         "messages": [
-
             {
-                "type": "bubble",
-                "body": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "spacing": "md",
-                    "action": {
-                        "type": "uri",
-                        "uri": "https://linecorp.com"
-                    },
-                    "contents": [
-                        {
-                            "type": "text",
-                            "text": "เบอร์โทรติดต่อ 08x-xxx-xxxx หรือ",
-                            "size": "md",
-                            "weight": "regular",
-                            "color": "#232323",
-                            "margin": "none"
-                        },
-                        {
+                "type": "flex",
+                "altText": "เบอร์โทรและไลน์ติดต่อพนักงานค่ะ",
+                "contents":
+                    {
+                        "type": "bubble",
+                        "body": {
                             "type": "box",
                             "layout": "vertical",
-                            "spacing": "sm",
-                            "contents": []
-                        },
-                        {
-                            "type": "text",
-                            "text": "สามารถติดต่อสอบถามไลน์แอดมินได้ค่ะ",
-                            "color": "#232323",
-                            "size": "md",
-                            "weight": "regular"
-                        }
-                    ]
-                },
-                "footer": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                        {
-                            "type": "spacer",
-                            "size": "xxl"
-                        },
-                        {
-                            "type": "button",
-                            "style": "primary",
-                            "color": "#00ac00",
+                            "spacing": "md",
                             "action": {
                                 "type": "uri",
-                                "label": "ติดต่อไลน์แอดมิน",
-                                "uri": "https://lin.ee/4AhDoDQ"
-                            }
+                                "uri": "https://linecorp.com"
+                            },
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "เบอร์โทรติดต่อ 08x-xxx-xxxx หรือ",
+                                    "size": "md",
+                                    "weight": "regular",
+                                    "color": "#232323",
+                                    "margin": "none"
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "spacing": "sm",
+                                    "contents": []
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "สามารถติดต่อสอบถามไลน์แอดมินได้ค่ะ",
+                                    "color": "#232323",
+                                    "size": "md",
+                                    "weight": "regular"
+                                }
+                            ]
+                        },
+                        "footer": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "spacer",
+                                    "size": "xxl"
+                                },
+                                {
+                                    "type": "button",
+                                    "style": "primary",
+                                    "color": "#00ac00",
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "ติดต่อไลน์แอดมิน",
+                                        "uri": "https://lin.ee/4AhDoDQ"
+                                    }
+                                }
+                            ]
                         }
-                    ]
-                }
+                    }
+
             }
+
 
         ]
     }
@@ -298,6 +304,10 @@ def contractAdmin(Reply_token, Line_Acees_Token):
     data = json.dumps(data)  ## dump dict >> Json Object
     r = requests.post(LINE_API, headers=headers, data=data)
     return 200
+
+
+
+
 # #flex msg จองนัด
 # {
 #   "type": "bubble",
