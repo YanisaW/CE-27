@@ -62,8 +62,6 @@ custom_words_list = set(thai_words())
 ## add multiple words
 custom_words_list.update(words)
 ## add word
-# custom_words_list.add('เป็งปุ๊ด')
-# custom_words_list.add('เพ็ญพุธ')
 trie = dict_trie(dict_source=custom_words_list)
 custom_tokenizer = Tokenizer(custom_dict=trie, engine='newmm')
 

@@ -27,9 +27,11 @@ def webhook():
         #answer = answer1 +' ID :'+userID
         if answer == "ยิ้มสวยไม่เข้าใจค่ะ ลองถามใหม่อีกครั้งค่ะ":
             #PushMessage(Line.configLine.groupID, message, Line.configLine.Channel_access_token)
-            contactAdmin(Reply_token, Line.configLine.Channel_access_token)
+            noAnswer(Reply_token, Line.configLine.Channel_access_token)
         elif answer == "แผนที่":
             location(Reply_token, Line.configLine.Channel_access_token)
+        elif "เบอร์โทร" in answer:
+            contractAdmin(Reply_token, Line.configLine.Channel_access_token)
         else:
             ReplyMessage(Reply_token, answer, Line.configLine.Channel_access_token)
         return request.json, 200 #success
@@ -94,7 +96,7 @@ def ReplyMessage(Reply_token, TextMessage, Line_Acees_Token):
 #     r = requests.post(LINE_API, headers=headers, data=data)
 #     return 200
 
-def contactAdmin(Reply_token, Line_Acees_Token):
+def noAnswer(Reply_token, Line_Acees_Token):
     LINE_API = 'https://api.line.me/v2/bot/message/reply'
 
     Authorization = 'Bearer {}'.format(Line_Acees_Token)  ##ที่ยาวๆ
@@ -219,6 +221,83 @@ def location(Reply_token, Line_Acees_Token):
     r = requests.post(LINE_API, headers=headers, data=data)
     return 200
 
+
+def contractAdmin(Reply_token, Line_Acees_Token):
+    LINE_API = 'https://api.line.me/v2/bot/message/reply'
+
+    Authorization = 'Bearer {}'.format(Line_Acees_Token)  ##ที่ยาวๆ
+    print(Authorization)
+    headers = {
+        'Content-Type': 'application/json; charset=UTF-8',
+        'Authorization': Authorization
+    }
+
+    data = {
+        "replyToken": Reply_token,
+        "messages": [
+
+            {
+                "type": "bubble",
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "spacing": "md",
+                    "action": {
+                        "type": "uri",
+                        "uri": "https://linecorp.com"
+                    },
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "เบอร์โทรติดต่อ 08x-xxx-xxxx หรือ",
+                            "size": "md",
+                            "weight": "regular",
+                            "color": "#232323",
+                            "margin": "none"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "sm",
+                            "contents": []
+                        },
+                        {
+                            "type": "text",
+                            "text": "สามารถติดต่อสอบถามไลน์แอดมินได้ค่ะ",
+                            "color": "#232323",
+                            "size": "md",
+                            "weight": "regular"
+                        }
+                    ]
+                },
+                "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "spacer",
+                            "size": "xxl"
+                        },
+                        {
+                            "type": "button",
+                            "style": "primary",
+                            "color": "#00ac00",
+                            "action": {
+                                "type": "uri",
+                                "label": "ติดต่อไลน์แอดมิน",
+                                "uri": "https://lin.ee/4AhDoDQ"
+                            }
+                        }
+                    ]
+                }
+            }
+
+        ]
+    }
+
+    data = json.dumps(data)  ## dump dict >> Json Object
+    r = requests.post(LINE_API, headers=headers, data=data)
+    return 200
 # #flex msg จองนัด
 # {
 #   "type": "bubble",
