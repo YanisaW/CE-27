@@ -4,6 +4,8 @@ import json
 import Line
 from Line.configLine import *
 from chat import *
+from linebot import LineBotApi
+from linebot.exceptions import LineBotApiError
 app = Flask(__name__)
 
 @app.route('/')
@@ -20,11 +22,14 @@ def webhook():
         print(message)
         userID = payload['events'][0]['source']['userId']
         print(userID)
-        userName = payload['events'][0]['source']['displayName']
+        line_bot_api = LineBotApi(Line.configLine.Channel_access_token)
+        profile = line_bot_api.get_profile(userID)
+        # error handle
+        # userName = payload['events'][0]['source']['displayName']
         # groupID = payload['events'][0]['source']['groupId']
         # print(groupID)
         #answer = 'สวัสดีค่ะ'
-        answer = question(message, userName)
+        answer = question(message, profile.display_name)
         #answer = answer1 +' ID :'+userID
         if answer == "ยิ้มสวยไม่เข้าใจค่ะ ลองถามใหม่อีกครั้งค่ะ":
             #PushMessage(Line.configLine.groupID, message, Line.configLine.Channel_access_token)
