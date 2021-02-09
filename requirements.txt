@@ -24,7 +24,7 @@ mkl-random==1.0.1.1
 nltk==3.5
 numpy==1.15.1
 olefile==0.46
-Pillow @ file:///C:/ci/pillow_1602785322033/work
+Pillow
 pythainlp==2.2.4
 python-crfsuite==0.9.7
 regex==2020.9.27
@@ -36,7 +36,7 @@ tinydb==4.2.0
 torch==1.6.0+cpu
 torchvision==0.7.0+cpu
 tqdm==4.50.0
-typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1598376058250/work
+typing-extensions
 urllib3==1.25.10
 virtualenv==20.0.35
 Werkzeug==1.0.1
