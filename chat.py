@@ -95,7 +95,7 @@ model.eval()
 #     else:
 #         print(f"{bot_name}: ยิ้มสวยไม่เข้าใจค่ะ ลองใหม่อีกครั้งค่ะ")
 
-def question(sentence):
+def question(sentence,userName):
     sentence = tokenize(sentence)
     ignore_words = ['?', '!', '.', '"', '@', '#', '^', '=', '-', ',', '/', '*', '$', '&', '(', ')', ' ']
     sentence = [w for w in sentence if w not in ignore_words]
@@ -124,7 +124,7 @@ def question(sentence):
                                 name = name + "คุณหมอ" + dent['Name'] + " "
                     answer = answer.replace('(name)', name)
                 if '(customer_name)' in answer:
-                    answer = answer.replace('(customer_name)', 'ลูกค้า')
+                    answer = answer.replace('(customer_name)', userName)
                 if '(date)' in answer or '(time)' in answer:
                     time = datetime.datetime.now()
                     answer = answer.replace('(date)', time.strftime("%x")).replace('(time)', time.strftime("%X"))

@@ -20,10 +20,11 @@ def webhook():
         print(message)
         userID = payload['events'][0]['source']['userId']
         print(userID)
+        userName = displayName['events'][0]['source']['userId']
         # groupID = payload['events'][0]['source']['groupId']
         # print(groupID)
         #answer = 'สวัสดีค่ะ'
-        answer = question(message)
+        answer = question(message, userName)
         #answer = answer1 +' ID :'+userID
         if answer == "ยิ้มสวยไม่เข้าใจค่ะ ลองถามใหม่อีกครั้งค่ะ":
             #PushMessage(Line.configLine.groupID, message, Line.configLine.Channel_access_token)
