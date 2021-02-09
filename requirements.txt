@@ -24,7 +24,7 @@ mkl-random==1.0.1.1
 nltk==3.5
 numpy==1.15.1
 olefile==0.46
-Pillow
+Pillow @ file:///C:/ci/pillow_1602785322033/work
 pythainlp==2.2.4
 python-crfsuite==0.9.7
 regex==2020.9.27
@@ -33,13 +33,13 @@ six==1.15.0
 tbb==2019.0
 tbb4py==2019.0
 tinydb==4.2.0
---find-links https://download.pytorch.org/whl/torch_stable.html
 torch==1.6.0+cpu
 torchvision==0.7.0+cpu
 tqdm==4.50.0
-typing-extensions
+typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1598376058250/work
 urllib3==1.25.10
 virtualenv==20.0.35
 Werkzeug==1.0.1
 wincertstore==0.2
 zipp==3.3.1
+line-bot-sdk==1.18.0
