@@ -20,7 +20,7 @@ def webhook():
         print(message)
         userID = payload['events'][0]['source']['userId']
         print(userID)
-        userName = displayName['events'][0]['source']['userId']
+        userName = payload['events'][0]['source']['displayName']
         # groupID = payload['events'][0]['source']['groupId']
         # print(groupID)
         #answer = 'สวัสดีค่ะ'
