@@ -33,6 +33,7 @@ six==1.15.0
 tbb==2019.0
 tbb4py==2019.0
 tinydb==4.2.0
+--find-links https://download.pytorch.org/whl/torch_stable.html
 torch==1.6.0+cpu
 torchvision==0.7.0+cpu
 tqdm==4.50.0
