@@ -69,10 +69,37 @@ def ReplyMessage(Reply_token, TextMessage, Line_Acees_Token):
     else:
         data = {
             "replyToken":Reply_token,
-            "messages":[{
+            "messages":[
+                {
                 "type":"text",
                 "text":TextMessage
-            }]
+                },
+                {
+                "type": "flex",
+                "altText": "ติดต่อสอบถามแอดมินได้ค่ะ",
+                "contents":
+                    {
+                        "type": "bubble",
+                        "footer": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "button",
+                                    "style": "primary",
+                                    "color": "#00ac00",
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "คลิกเพื่อจองนัด",
+                                        "uri": "https://liff.line.me/1655583873-GbO3xBzl"
+                                    }
+                                }
+                            ],
+                            "cornerRadius": "none"
+                        }
+                    }
+                }
+            ]
         }
 
     data = json.dumps(data) ## dump dict >> Json Object

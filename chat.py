@@ -129,9 +129,6 @@ def question(sentence,userName):
                     time = datetime.datetime.now()
                     answer = answer.replace('(date)', time.strftime("%x")).replace('(time)', time.strftime("%X"))
                 if '(list)' in answer or '(price)' in answer:
-                #         list1 = random.choice(dental_lists["type"])
-                #         price = random.choice(dental_lists["type"])
-                #         print(f"{list1} & {price}")
                     for dental in dental_lists["dental_lists"]:
                         for a in dental["homonyms"]:
                             if a in sentence:
