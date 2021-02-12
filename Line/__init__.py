@@ -90,53 +90,55 @@ def ReplyMessage(Reply_token, TextMessage, Line_Acees_Token):
                                         "layout": "vertical",
                                         "contents": [
                                             {
-                                                "type": "image",
-                                                "url": "https://i.ibb.co/ZMp4czb/rich-menu-1.png",
+                                                "type": "button",
                                                 "action": {
                                                     "type": "message",
-                                                    "label": "action",
-                                                    "text": "นัดจองคุณหมอ"
+                                                    "label": "จองนัด",
+                                                    "text": " นัดจองคุณหมอ"
                                                 },
-                                                "size": "full",
-                                                "aspectRatio": "2:3",
-                                                "margin": "none"
+                                                "style": "link"
                                             }
                                         ]
+                                    },
+                                    {
+                                        "type": "separator"
                                     },
                                     {
                                         "type": "box",
                                         "layout": "vertical",
                                         "contents": [
                                             {
-                                                "type": "image",
-                                                "url": "https://i.ibb.co/NsqJyRC/rich-menu-2.png",
-                                                "position": "relative",
-                                                "aspectRatio": "2:3",
+                                                "type": "button",
                                                 "action": {
                                                     "type": "uri",
-                                                    "label": "action",
+                                                    "label": "สมาชิก",
                                                     "uri": "https://liff.line.me/1655583873-GbO3xBzl"
-                                                }
+                                                },
+                                                "style": "link"
                                             }
                                         ]
+                                    },
+                                    {
+                                        "type": "separator"
                                     },
                                     {
                                         "type": "box",
                                         "layout": "vertical",
                                         "contents": [
                                             {
-                                                "type": "image",
-                                                "url": "https://i.ibb.co/kcrBMRk/rich-menu-3.png",
-                                                "aspectRatio": "2:3",
+                                                "type": "button",
                                                 "action": {
                                                     "type": "message",
-                                                    "label": "action",
-                                                    "text": " ตรวจสอบนัด"
-                                                }
+                                                    "text": "ตรวจสอบนัด",
+                                                    "label": "เช็คนัด"
+                                                },
+                                                "style": "link",
+                                                "position": "relative"
                                             }
                                         ]
                                     }
-                                ]
+                                ],
+                                "spacing": "none"
                             },
                             {
                                 "type": "separator",
@@ -151,54 +153,63 @@ def ReplyMessage(Reply_token, TextMessage, Line_Acees_Token):
                                         "layout": "vertical",
                                         "contents": [
                                             {
-                                                "type": "image",
-                                                "url": "https://i.ibb.co/rGncDkj/rich-menu-4.png",
-                                                "aspectRatio": "2:3",
+                                                "type": "button",
                                                 "action": {
                                                     "type": "message",
-                                                    "label": "action",
+                                                    "label": "ถามราคา",
                                                     "text": "สอบถามราคา"
-                                                }
+                                                },
+                                                "style": "link"
                                             }
                                         ]
                                     },
                                     {
-                                        "type": "box",
-                                        "layout": "vertical",
-                                        "contents": [
-                                            {
-                                                "type": "image",
-                                                "url": "https://i.ibb.co/2KrF1cJ/rich-menu-5.png",
-                                                "aspectRatio": "2:3",
-                                                "action": {
-                                                    "type": "message",
-                                                    "label": "action",
-                                                    "text": "แผนที่"
-                                                }
-                                            }
-                                        ],
-                                        "paddingAll": "0px"
+                                        "type": "separator"
                                     },
                                     {
                                         "type": "box",
                                         "layout": "vertical",
                                         "contents": [
                                             {
-                                                "type": "image",
-                                                "url": "https://i.ibb.co/mGR0RL6/rich-menu-6.png",
-                                                "aspectRatio": "2:3",
+                                                "type": "button",
                                                 "action": {
                                                     "type": "message",
-                                                    "label": "action",
-                                                    "text": "ติดต่อพนักงาน"
-                                                }
+                                                    "label": "แผนที่",
+                                                    "text": "แผนที่"
+                                                },
+                                                "style": "link"
+                                            }
+                                        ],
+                                        "action": {
+                                            "type": "message",
+                                            "label": "z",
+                                            "text": "hello"
+                                        }
+                                    },
+                                    {
+                                        "type": "separator"
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "button",
+                                                "action": {
+                                                    "type": "message",
+                                                    "label": "แอดมิน",
+                                                    "text": "ติดต่อแอดมิน"
+                                                },
+                                                "style": "link"
                                             }
                                         ]
                                     }
                                 ]
                             }
                         ],
-                        "cornerRadius": "none"
+                        "cornerRadius": "none",
+                        "spacing": "none",
+                        "position": "relative"
                     }
                 }
 
