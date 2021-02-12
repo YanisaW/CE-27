@@ -70,282 +70,139 @@ def ReplyMessage(Reply_token, TextMessage, Line_Acees_Token):
         data = {
             "replyToken":Reply_token,
             "messages":[
-                # {
-                # "type":"text",
-                # "text":TextMessage
-                # }
-                # ,
-
-                # {
-                #     "type": "flex",
-                #     "altText": "เมนูช่วยเหลือ",
-                #     "contents":
-                #         {
-                #             "type": "bubble",
-                #             "hero": {
-                #                 "type": "box",
-                #                 "layout": "vertical",
-                #                 "contents": [
-                #                     {
-                #                         "type": "box",
-                #                         "layout": "horizontal",
-                #                         "contents": [
-                #                             {
-                #                                 "type": "box",
-                #                                 "layout": "vertical",
-                #                                 "contents": [
-                #                                     {
-                #                                         "type": "image",
-                #                                         "url": "https://i.ibb.co/ZMp4czb/rich-menu-1.png",
-                #                                         "action": {
-                #                                             "type": "message",
-                #                                             "label": "action",
-                #                                             "text": "นัดจองคุณหมอ"
-                #                                         },
-                #                                         "size": "full",
-                #                                         "aspectRatio": "2:3",
-                #                                         "margin": "none"
-                #                                     }
-                #                                 ]
-                #                             },
-                #                             {
-                #                                 "type": "box",
-                #                                 "layout": "vertical",
-                #                                 "contents": [
-                #                                     {
-                #                                         "type": "image",
-                #                                         "url": "https://i.ibb.co/NsqJyRC/rich-menu-2.png",
-                #                                         "position": "relative",
-                #                                         "aspectRatio": "2:3",
-                #                                         "action": {
-                #                                             "type": "uri",
-                #                                             "label": "action",
-                #                                             "uri": "https://liff.line.me/1655583873-GbO3xBzl"
-                #                                         }
-                #                                     }
-                #                                 ]
-                #                             },
-                #                             {
-                #                                 "type": "box",
-                #                                 "layout": "vertical",
-                #                                 "contents": [
-                #                                     {
-                #                                         "type": "image",
-                #                                         "url": "https://i.ibb.co/kcrBMRk/rich-menu-3.png",
-                #                                         "aspectRatio": "2:3",
-                #                                         "action": {
-                #                                             "type": "message",
-                #                                             "label": "action",
-                #                                             "text": " ตรวจสอบนัด"
-                #                                         }
-                #                                     }
-                #                                 ]
-                #                             }
-                #                         ]
-                #                     },
-                #                     {
-                #                         "type": "separator"
-                #                     },
-                #                     {
-                #                         "type": "box",
-                #                         "layout": "horizontal",
-                #                         "contents": [
-                #                             {
-                #                                 "type": "box",
-                #                                 "layout": "vertical",
-                #                                 "contents": [
-                #                                     {
-                #                                         "type": "image",
-                #                                         "url": "https://i.ibb.co/rGncDkj/rich-menu-4.png",
-                #                                         "aspectRatio": "2:3",
-                #                                         "action": {
-                #                                             "type": "message",
-                #                                             "label": "action",
-                #                                             "text": "สอบถามราคา"
-                #                                         }
-                #                                     }
-                #                                 ]
-                #                             },
-                #                             {
-                #                                 "type": "box",
-                #                                 "layout": "vertical",
-                #                                 "contents": [
-                #                                     {
-                #                                         "type": "image",
-                #                                         "url": "https://i.ibb.co/2KrF1cJ/rich-menu-5.png",
-                #                                         "aspectRatio": "2:3",
-                #                                         "action": {
-                #                                             "type": "message",
-                #                                             "label": "action",
-                #                                             "text": "แผนที่"
-                #                                         }
-                #                                     }
-                #                                 ]
-                #                             },
-                #                             {
-                #                                 "type": "box",
-                #                                 "layout": "vertical",
-                #                                 "contents": [
-                #                                     {
-                #                                         "type": "image",
-                #                                         "url": "https://i.ibb.co/mGR0RL6/rich-menu-6.png",
-                #                                         "aspectRatio": "2:3",
-                #                                         "action": {
-                #                                             "type": "message",
-                #                                             "label": "action",
-                #                                             "text": "ติดต่อพนักงาน"
-                #                                         }
-                #                                     }
-                #                                 ]
-                #                             }
-                #                         ]
-                #                     }
-                #                 ],
-                #                 "cornerRadius": "none"
-                #             }
-                #         }
-                # }
-
                 {
-                    "type": "carousel",
-                    "contents": [
-                        {
-                            "type": "bubble",
-                            "body": {
-                                "type": "box",
-                                "layout": "vertical",
-                                "contents": [
-                                    {
-                                        "type": "image",
-                                        "url": "https://i.ibb.co/ZMp4czb/rich-menu-1.png",
-                                        "size": "full",
-                                        "aspectMode": "cover",
-                                        "aspectRatio": "2:3",
-                                        "gravity": "top",
-                                        "action": {
-                                            "type": "message",
-                                            "text": "นัดจองคุณหมอ"
-                                        }
-                                    }
-                                ],
-                                "paddingAll": "0px"
-                            }
-                        },
-                        {
-                            "type": "bubble",
-                            "body": {
-                                "type": "box",
-                                "layout": "vertical",
-                                "contents": [
-                                    {
-                                        "type": "image",
-                                        "url": "https://i.ibb.co/NsqJyRC/rich-menu-2.png",
-                                        "size": "full",
-                                        "aspectMode": "cover",
-                                        "aspectRatio": "2:3",
-                                        "gravity": "top",
-                                        "action": {
-                                            "type": "uri",
-                                            "uri": "https://liff.line.me/1655583873-GbO3xBzl"
-                                        }
-                                    }
-                                ],
-                                "paddingAll": "0px"
-                            }
-                        },
-                        {
-                            "type": "bubble",
-                            "body": {
-                                "type": "box",
-                                "layout": "vertical",
-                                "contents": [
-                                    {
-                                        "type": "image",
-                                        "size": "full",
-                                        "aspectMode": "cover",
-                                        "aspectRatio": "2:3",
-                                        "gravity": "top",
-                                        "action": {
-                                            "type": "message",
-                                            "text": "ตรวจสอบนัด"
-                                        },
-                                        "url": "https://i.ibb.co/kcrBMRk/rich-menu-3.png"
-                                    }
-                                ],
-                                "paddingAll": "0px"
-                            }
-                        },
-                        {
-                            "type": "bubble",
-                            "body": {
-                                "type": "box",
-                                "layout": "vertical",
-                                "contents": [
-                                    {
-                                        "type": "image",
-                                        "url": "https://i.ibb.co/rGncDkj/rich-menu-4.png",
-                                        "size": "full",
-                                        "aspectMode": "cover",
-                                        "aspectRatio": "2:3",
-                                        "gravity": "top",
-                                        "action": {
-                                            "type": "message",
-                                            "label": " ",
-                                            "text": "สอบถามราคา"
-                                        }
-                                    }
-                                ],
-                                "paddingAll": "0px"
-                            }
-                        },
-                        {
-                            "type": "bubble",
-                            "body": {
-                                "type": "box",
-                                "layout": "vertical",
-                                "contents": [
-                                    {
-                                        "type": "image",
-                                        "url": "https://i.ibb.co/2KrF1cJ/rich-menu-5.png",
-                                        "size": "full",
-                                        "aspectMode": "cover",
-                                        "aspectRatio": "2:3",
-                                        "gravity": "top",
-                                        "action": {
-                                            "type": "message",
-                                            "label": " ",
-                                            "text": "แผนที่"
-                                        }
-                                    }
-                                ],
-                                "paddingAll": "0px"
-                            }
-                        },
-                        {
-                            "type": "bubble",
-                            "body": {
-                                "type": "box",
-                                "layout": "vertical",
-                                "contents": [
-                                    {
-                                        "type": "image",
-                                        "url": "https://i.ibb.co/mGR0RL6/rich-menu-6.png",
-                                        "size": "full",
-                                        "aspectMode": "cover",
-                                        "aspectRatio": "2:3",
-                                        "gravity": "top",
-                                        "action": {
-                                            "type": "message",
-                                            "label": " ",
-                                            "text": "ติดต่อพนักงาน"
-                                        }
-                                    }
-                                ],
-                                "paddingAll": "0px"
-                            }
-                        }
-                    ]
+                "type":"text",
+                "text":TextMessage
                 }
+                ,
+                {
+                    "type": "bubble",
+                    "hero": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "image",
+                                                "url": "https://i.ibb.co/ZMp4czb/rich-menu-1.png",
+                                                "action": {
+                                                    "type": "message",
+                                                    "label": "action",
+                                                    "text": "นัดจองคุณหมอ"
+                                                },
+                                                "size": "full",
+                                                "aspectRatio": "2:3",
+                                                "margin": "none"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "image",
+                                                "url": "https://i.ibb.co/NsqJyRC/rich-menu-2.png",
+                                                "position": "relative",
+                                                "aspectRatio": "2:3",
+                                                "action": {
+                                                    "type": "uri",
+                                                    "label": "action",
+                                                    "uri": "https://liff.line.me/1655583873-GbO3xBzl"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "image",
+                                                "url": "https://i.ibb.co/kcrBMRk/rich-menu-3.png",
+                                                "aspectRatio": "2:3",
+                                                "action": {
+                                                    "type": "message",
+                                                    "label": "action",
+                                                    "text": " ตรวจสอบนัด"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "separator",
+                                "margin": "xs"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "horizontal",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "image",
+                                                "url": "https://i.ibb.co/rGncDkj/rich-menu-4.png",
+                                                "aspectRatio": "2:3",
+                                                "action": {
+                                                    "type": "message",
+                                                    "label": "action",
+                                                    "text": "สอบถามราคา"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "image",
+                                                "url": "https://i.ibb.co/2KrF1cJ/rich-menu-5.png",
+                                                "aspectRatio": "2:3",
+                                                "action": {
+                                                    "type": "message",
+                                                    "label": "action",
+                                                    "text": "แผนที่"
+                                                }
+                                            }
+                                        ],
+                                        "paddingAll": "0px"
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                            {
+                                                "type": "image",
+                                                "url": "https://i.ibb.co/mGR0RL6/rich-menu-6.png",
+                                                "aspectRatio": "2:3",
+                                                "action": {
+                                                    "type": "message",
+                                                    "label": "action",
+                                                    "text": "ติดต่อพนักงาน"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "cornerRadius": "none"
+                    }
+                }
+
+
             ]
         }
 
