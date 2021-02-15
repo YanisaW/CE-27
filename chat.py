@@ -59,7 +59,7 @@ model.eval()
 #         print(prob.item())
 #         for intent in intents['intents']:
 #             if tag == intent["tag"]:
-#                 # print(tag)
+#                 print(tag)
 #                 answer = random.choice(intent['responses'])
 #                 if '(name)' in answer:
 #                     name = ""
