@@ -29,8 +29,9 @@ def webhook():
         # groupID = payload['events'][0]['source']['groupId']
         # print(groupID)
         #answer = 'สวัสดีค่ะ'
-        answer = question(message, profile.display_name)
+        answer, tag = question(message, profile.display_name)
         #answer = answer1 +' ID :'+userID
+        print(answer)
         if answer == "ยิ้มสวยไม่เข้าใจค่ะ ลองถามใหม่อีกครั้งค่ะ":
             #PushMessage(Line.configLine.groupID, message, Line.configLine.Channel_access_token)
             noAnswer(Reply_token, Line.configLine.Channel_access_token)
