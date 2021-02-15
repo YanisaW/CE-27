@@ -20,8 +20,8 @@ joblib==0.17.0
 line-bot-sdk==1.18.0
 MarkupSafe==1.1.1
 mkl==2019.0
-mkl-fft==1.2.0
-mkl-random==1.1.1
+mkl-fft==1.0.6
+mkl-random==1.0.1.1
 nltk==3.5
 numpy
 olefile==0.46
