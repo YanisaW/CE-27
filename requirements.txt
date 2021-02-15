@@ -23,7 +23,7 @@ mkl==2019.0
 mkl-fft==1.0.6
 mkl-random==1.0.1.1
 nltk==3.5
-numpy
+numpy==1.15.1
 olefile==0.46
 Pillow
 pycparser
@@ -31,7 +31,7 @@ pythainlp==2.2.4
 python-crfsuite==0.9.7
 regex==2020.9.27
 requests==2.24.0
-six
+six==1.15.0
 tbb==2019.0
 tbb4py==2019.0
 tinydb==4.2.0
