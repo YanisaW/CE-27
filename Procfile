@@ -1,2 +1,1 @@
-web: gunicorn app:app
-web: jemalloc.sh bundle exec puma
+web: gunicorn app:app --log-file=- --workers 1 --threads 4

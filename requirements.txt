@@ -44,3 +44,6 @@ Werkzeug==1.0.1
 wincertstore==0.2
 zipp==3.3.1
 line-bot-sdk==1.18.0
+
+futures==2.1.6
+trollius==1.0.1
