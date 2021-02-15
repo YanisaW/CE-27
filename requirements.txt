@@ -34,7 +34,7 @@ tbb==2019.0
 tbb4py==2019.0
 tinydb==4.2.0
 --find-links https://download.pytorch.org/whl/torch_stable.html
-torch==1.1.0+cpu
+torch==1.2.0+cpu
 torchvision==0.7.0+cpu
 tqdm==4.50.0
 typing-extensions
