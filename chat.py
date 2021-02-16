@@ -140,9 +140,9 @@ def question(sentence,userName):
                     if '(list)' in answer or '(price)' in answer:
                         answer = 'ราคา'
 
-                return answer
+                return answer, tag
     else:
-        return ("ยิ้มสวยไม่เข้าใจค่ะ ลองถามใหม่อีกครั้งค่ะ")
+        return "ยิ้มสวยไม่เข้าใจค่ะ ลองถามใหม่อีกครั้งค่ะ", ""
 
 # # test case
 # test1 = ['สวัสดี', 'สวัสดีครับผม', "สบายดีไหม"]

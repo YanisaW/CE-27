@@ -29,7 +29,7 @@ def webhook():
         # groupID = payload['events'][0]['source']['groupId']
         # print(groupID)
         #answer = 'สวัสดีค่ะ'
-        answer = question(message, profile.display_name)
+        answer, tag = question(message, profile.display_name)
         #answer = answer1 +' ID :'+userID
         print(answer)
         if answer == "ยิ้มสวยไม่เข้าใจค่ะ ลองถามใหม่อีกครั้งค่ะ":
@@ -40,21 +40,21 @@ def webhook():
         elif "เบอร์โทร" in answer:
             contractAdmin(Reply_token, Line.configLine.Channel_access_token)
         else:
-            ReplyMessage(Reply_token, answer, Line.configLine.Channel_access_token)
+            ReplyMessage(Reply_token, answer, tag, Line.configLine.Channel_access_token)
         return request.json, 200 #success
     elif request.method == 'GET': # GET การดูหน้าเว็บ
-        return 'This is method GET',200
+        return 'This is method GET', 200
     else:
         abort(400)
 
-def ReplyMessage(Reply_token, TextMessage, Line_Acees_Token):
+def ReplyMessage(Reply_token, TextMessage, tag, Line_Acees_Token):
     LINE_API = 'https://api.line.me/v2/bot/message/reply'
 
     Authorization = 'Bearer {}'.format(Line_Acees_Token) ##ที่ยาวๆ
     print(Authorization)
     headers = {
         'Content-Type': 'application/json; charset=UTF-8',
-        'Authorization':Authorization
+        'Authorization': Authorization
     }
 
     if TextMessage == 'ราคา':
@@ -67,7 +67,7 @@ def ReplyMessage(Reply_token, TextMessage, Line_Acees_Token):
             }]
         }
 
-    else:
+    elif tag == 'general':
         data = {
             "replyToken":Reply_token,
             "messages":[
@@ -233,6 +233,59 @@ def ReplyMessage(Reply_token, TextMessage, Line_Acees_Token):
 
             ]
         }
+    elif tag == 'appointment' or tag == 'dentist_appointment' or tag == 'cancel' or tag == 'postpone' or tag == 'cost':
+        data = {
+            "replyToken": Reply_token,
+            "messages": [
+                {
+                    "type": "text",
+                    "text": TextMessage
+                }
+                ,
+                {
+                    "type": "flex",
+                    "altText": "เมนูทำรายการ",
+                    "contents":
+                        {
+                            "type": "bubble",
+                            "size": "nano",
+                            "body": {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://i.ibb.co/ZMp4czb/rich-menu-1.png",
+                                        "size": "full",
+                                        "aspectRatio": "2:3",
+                                        "gravity": "top",
+                                        "action": {
+                                            "type": "message",
+                                            "text": "นัดจองคุณหมอ"
+                                        },
+                                        "aspectMode": "cover"
+                                    }
+                                ],
+                                "paddingAll": "0px"
+                            }
+                        }
+
+                }
+
+            ]
+        }
+    else:
+        data = {
+
+            "replyToken": Reply_token,
+            "messages": [
+                {
+                    "type": "text",
+                    "text": TextMessage
+                }
+                ]
+            }
+
 
     data = json.dumps(data) ## dump dict >> Json Object
     r = requests.post(LINE_API, headers=headers, data=data)
