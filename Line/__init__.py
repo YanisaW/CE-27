@@ -233,7 +233,7 @@ def ReplyMessage(Reply_token, TextMessage, tag, Line_Acees_Token):
 
             ]
         }
-    elif tag == 'appointment' or tag == 'dentist_appointment' or tag == 'cancel' or tag == 'postpone' or tag == 'cost':
+    elif tag == 'appointment' or tag == 'dentist_appointment' or tag == 'cost':
         data = {
             "replyToken": Reply_token,
             "messages": [
@@ -260,8 +260,51 @@ def ReplyMessage(Reply_token, TextMessage, tag, Line_Acees_Token):
                                         "aspectRatio": "2:3",
                                         "gravity": "top",
                                         "action": {
-                                            "type": "message",
-                                            "text": "นัดจองคุณหมอ"
+                                            "type": "uri",
+                                            "label": "จองนัด",
+                                            "uri": "https://liff.line.me/1655583873-GbO3xBzl/appoint"
+                                        },
+                                        "aspectMode": "cover"
+                                    }
+                                ],
+                                "paddingAll": "0px"
+                            }
+                        }
+
+                }
+
+            ]
+        }
+    elif tag == 'cancel' or tag == 'postpone':
+        data = {
+            "replyToken": Reply_token,
+            "messages": [
+                {
+                    "type": "text",
+                    "text": TextMessage
+                }
+                ,
+                {
+                    "type": "flex",
+                    "altText": "เมนูทำรายการ",
+                    "contents":
+                        {
+                            "type": "bubble",
+                            "size": "nano",
+                            "body": {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://i.ibb.co/qNLFgsr/image.png",
+                                        "size": "full",
+                                        "aspectRatio": "2:3",
+                                        "gravity": "top",
+                                        "action": {
+                                            "type": "uri",
+                                            "label": "เลื่อน/ยกเลิกนัด",
+                                            "uri": "https://liff.line.me/1655583873-GbO3xBzl/check_appoint"
                                         },
                                         "aspectMode": "cover"
                                     }
