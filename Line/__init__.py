@@ -29,7 +29,7 @@ def webhook():
         # groupID = payload['events'][0]['source']['groupId']
         # print(groupID)
         #answer = 'สวัสดีค่ะ'
-        answer, tag = question(message, profile.display_name)
+        answer, tag = question(message, profile.display_name, userID)
         #answer = answer1 +' ID :'+userID
         print(answer)
         if answer == "ยิ้มสวยไม่เข้าใจค่ะ ลองถามใหม่อีกครั้งค่ะ":
@@ -310,6 +310,79 @@ def ReplyMessage(Reply_token, TextMessage, tag, Line_Acees_Token):
                                     }
                                 ],
                                 "paddingAll": "0px"
+                            }
+                        }
+
+                }
+
+            ]
+        }
+    elif tag == 'payment':
+        data = {
+            "replyToken": Reply_token,
+            "messages": [
+                {
+                    "type": "flex",
+                    "altText": "การชำระเงิน",
+                    "contents":
+                        {
+                            "type": "bubble",
+                            "body": {
+                                "type": "box",
+                                "layout": "vertical",
+                                "spacing": "md",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "การชำระเงิน",
+                                        "weight": "bold",
+                                        "gravity": "center",
+                                        "size": "xl",
+                                        "align": "center"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "ลูกค้าสามารถจ่ายค่ารักษาได้ด้วย",
+                                        "size": "lg"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": " -เงินสด "
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "-บัตรเครดิต"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": " -ประกันสังคม"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": " -พร้อมเพย์"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "พร้อมเพย์สแกนเพื่อชำระเงิน",
+                                        "align": "center"
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "margin": "xxl",
+                                        "contents": [
+                                            {
+                                                "type": "spacer"
+                                            },
+                                            {
+                                                "type": "image",
+                                                "url": "https://www.hs3lzx.com/qrcode/qrcodes/bce065fc9286b5593bb5a8a9f2a33052.png?1615526279765",
+                                                "aspectMode": "cover",
+                                                "size": "xl"
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
                         }
 
