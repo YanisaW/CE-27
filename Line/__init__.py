@@ -143,8 +143,9 @@ def ReplyMessage(Reply_token, TextMessage, tag, Line_Acees_Token):
                                                 "aspectRatio": "2:3",
                                                 "gravity": "top",
                                                 "action": {
-                                                    "type": "message",
-                                                    "text": "ตรวจสอบนัด"
+                                                    "type": "uri",
+                                                    "label": "ตรวจสอบนัด",
+                                                    "uri": "https://liff.line.me/1655583873-GbO3xBzl/check_appoint"
                                                 },
                                                 "url": "https://i.ibb.co/kcrBMRk/rich-menu-3.png"
                                             }
@@ -376,7 +377,7 @@ def ReplyMessage(Reply_token, TextMessage, tag, Line_Acees_Token):
                                             },
                                             {
                                                 "type": "image",
-                                                "url": "https://www.hs3lzx.com/qrcode/qrcodes/bce065fc9286b5593bb5a8a9f2a33052.png?1615526279765",
+                                                "url": "https://i.ibb.co/YcVK5qk/qrCode.png",
                                                 "aspectMode": "cover",
                                                 "size": "xl"
                                             }
