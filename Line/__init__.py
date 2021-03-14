@@ -97,8 +97,9 @@ def ReplyMessage(Reply_token, TextMessage, tag, Line_Acees_Token):
                                                 "aspectRatio": "2:3",
                                                 "gravity": "top",
                                                 "action": {
-                                                    "type": "message",
-                                                    "text": "นัดจองคุณหมอ"
+                                                    "type": "uri",
+                                                    "label": "นัดจองคุณหมอ",
+                                                    "uri": "https://liff.line.me/1655583873-GbO3xBzl/appoint"
                                                 },
                                                 "aspectMode": "cover"
                                             }
