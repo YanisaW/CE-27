@@ -37,6 +37,7 @@ model.eval()
 # # Test the bot
 # # userID = 'U43cfd551cb59bd993ccf46fec4762e55' #ไหม
 # userID = 'U246b21848ae17fc7fdef81e75abe1eb4' #เอิร์น
+# # userID = 'U0654c13b6cced7934ea2eb3208fa370b' #แม่ไหม
 # userName = 'ลูกค้า'
 # bot_name = "ยิ้มสวย"
 #
@@ -69,6 +70,13 @@ model.eval()
 #             if tag == intent["tag"]:
 #                 # print(tag)
 #                 answer = random.choice(intent['responses'])
+#                 result = None
+#                 if tag == 'cancel' or tag == 'postpone':
+#                     result = fb_Data.get('/members', '/' + userID + '/appointment')
+#                     if result is None:
+#                         answer = 'คุณ(customer_name) ยังไม่ได้ทำการจองนัดหมายกรุณาจองนัดก่อนค่ะ \nคลิกที่เมนูเพื่อจองนัด'
+#                         tag = 'appointment'
+#
 #                 if '(name)' in answer:
 #                     name = ""
 #                     for dent in dentist['Dentist']:
@@ -79,8 +87,7 @@ model.eval()
 #                 if '(customer_name)' in answer:
 #                     answer = answer.replace('(customer_name)', userName)
 #                 if '(date)' in answer or '(time)' in answer:
-#                     if tag == 'cancel' or tag == 'postpone':
-#                         result = fb_Data.get('/members', '/' + userID + '/appointment')
+#                     if result is not None:
 #                         for i, day in enumerate(result):
 #                             if i + 1 == (len(result)):
 #                                 time_str = result[day]['time']
@@ -129,6 +136,12 @@ def question(sentence,userName, userID):
             if tag == intent["tag"]:
                 # print(tag)
                 answer = random.choice(intent['responses'])
+                result = None
+                if tag == 'cancel' or tag == 'postpone':
+                    result = fb_Data.get('/members', '/' + userID + '/appointment')
+                    if result is None:
+                        answer = 'คุณ(customer_name) ยังไม่ได้ทำการจองนัดหมายกรุณาจองนัดก่อนค่ะ \nคลิกที่เมนูเพื่อจองนัด'
+                        tag = 'appointment'
                 if '(name)' in answer:
                     name = ""
                     for dent in dentist['Dentist']:
@@ -139,15 +152,14 @@ def question(sentence,userName, userID):
                 if '(customer_name)' in answer:
                     answer = answer.replace('(customer_name)', userName)
                 if '(date)' in answer or '(time)' in answer:
-                    if tag == 'cancel' or tag == 'postpone':
-                        result = fb_Data.get('/members', '/' + userID + '/appointment')
+                    if result is not None:
                         for i, day in enumerate(result):
                             if i + 1 == (len(result)):
                                 time_str = result[day]['time']
                                 date_time_str = result[day]['date']
                                 date_time_obj = datetime.datetime.strptime(date_time_str, '%Y-%m-%d')
                                 date_time_format = date_time_obj.strftime('%d-%m-%Y')
-                                answer = answer.replace('(date)', date_time_format).replace('(time)', time_str)
+                        answer = answer.replace('(date)', date_time_format).replace('(time)', time_str)
                     else:
                         time = datetime.datetime.now()
                         answer = answer.replace('(date)', time.strftime("%x")).replace('(time)', time.strftime("%X"))
