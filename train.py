@@ -14,6 +14,7 @@ from pythainlp import word_tokenize, Tokenizer
 from pythainlp.util import dict_trie
 from pythainlp.corpus.common import thai_words
 
+
 #Analyze Accuracy
 # from torch.utils.tensorboard import SummaryWriter
 
@@ -29,7 +30,7 @@ with open('json/Dental_lists.json', encoding="utf8") as d:
 all_words = []
 tags = []
 xy = []
-types = []
+# types = []
 homonyms = []
 
 # for dental_list in dental_lists['dental_lists']:
@@ -210,8 +211,8 @@ data = {
     "hidden_size": hidden_size,
     "output_size": output_size,
     "all_words": all_words,
-    "tags": tags,
-    "types": types
+    "tags": tags
+    # "types": types
 }
 
 FILE = "data.pth"
