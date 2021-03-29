@@ -99,7 +99,7 @@ def ReplyMessage(Reply_token, TextMessage, tag, Line_Acees_Token):
                                                 "action": {
                                                     "type": "uri",
                                                     "label": "นัดจองคุณหมอ",
-                                                    "uri": "https://liff.line.me/1655583873-GbO3xBzl/appoint"
+                                                    "uri": "https://liff.line.me/1655583873-AGq8opb0"
                                                 },
                                                 "aspectMode": "cover"
                                             }
@@ -146,7 +146,7 @@ def ReplyMessage(Reply_token, TextMessage, tag, Line_Acees_Token):
                                                 "action": {
                                                     "type": "uri",
                                                     "label": "ตรวจสอบนัด",
-                                                    "uri": "https://liff.line.me/1655583873-GbO3xBzl/check_appoint"
+                                                    "uri": "https://liff.line.me/1655583873-7draoZY3"
                                                 },
                                                 "url": "https://i.ibb.co/kcrBMRk/rich-menu-3.png"
                                             }
@@ -264,7 +264,7 @@ def ReplyMessage(Reply_token, TextMessage, tag, Line_Acees_Token):
                                         "action": {
                                             "type": "uri",
                                             "label": "จองนัด",
-                                            "uri": "https://liff.line.me/1655583873-GbO3xBzl/appoint"
+                                            "uri": "https://liff.line.me/1655583873-AGq8opb0"
                                         },
                                         "aspectMode": "cover"
                                     }
@@ -306,7 +306,7 @@ def ReplyMessage(Reply_token, TextMessage, tag, Line_Acees_Token):
                                         "action": {
                                             "type": "uri",
                                             "label": "เลื่อน/ยกเลิกนัด",
-                                            "uri": "https://liff.line.me/1655583873-GbO3xBzl/check_appoint"
+                                            "uri": "https://liff.line.me/1655583873-7draoZY3"
                                         },
                                         "aspectMode": "cover"
                                     }
